@@ -1,0 +1,314 @@
+<!-- ============================================
+   SETTINGS PAGE
+   App configuration and preferences
+   ============================================ -->
+<div class="page-content page-content--with-header page-content--with-bottom-nav" id="settings-page">
+    <!-- Page Title -->
+    <div class="page-title">
+        <div>
+            <h2>Settings</h2>
+            <p class="page-subtitle">Customize your app experience</p>
+        </div>
+    </div>
+
+    <!-- Appearance Section -->
+    <div class="card mb-4">
+        <div class="card__header">
+            <h3 class="section-title">🎨 Appearance</h3>
+        </div>
+        <div class="card__body" style="padding-top: 0;">
+            <!-- Theme -->
+            <div class="settings-item">
+                <div class="flex-1">
+                    <div class="font-medium text-sm">Theme</div>
+                    <div class="text-xs text-secondary">Choose your preferred theme</div>
+                </div>
+                <div class="flex gap-2">
+                    <button class="theme-btn theme-btn--active" data-theme="light" aria-label="Light mode">
+                        <span>☀️</span>
+                    </button>
+                    <button class="theme-btn" data-theme="dark" aria-label="Dark mode">
+                        <span>🌙</span>
+                    </button>
+                    <button class="theme-btn" data-theme="auto" aria-label="Auto mode">
+                        <span>🔄</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Font Size -->
+            <div class="settings-item">
+                <div class="flex-1">
+                    <div class="font-medium text-sm">Font Size</div>
+                    <div class="text-xs text-secondary">Adjust text size</div>
+                </div>
+                <div class="flex gap-2 items-center">
+                    <span class="text-xs">A</span>
+                    <input type="range" min="0" max="2" value="1" class="settings-range" id="font-size-range">
+                    <span class="text-lg">A</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifications Section -->
+    <div class="card mb-4">
+        <div class="card__header">
+            <h3 class="section-title">🔔 Notifications</h3>
+        </div>
+        <div class="card__body" style="padding-top: 0;">
+            <div class="settings-item">
+                <div class="flex-1">
+                    <div class="font-medium text-sm">Push Notifications</div>
+                    <div class="text-xs text-secondary">Receive important alerts</div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="push-notifications" checked>
+                    <span class="switch__slider"></span>
+                </label>
+            </div>
+            <div class="settings-item">
+                <div class="flex-1">
+                    <div class="font-medium text-sm">Sound Effects</div>
+                    <div class="text-xs text-secondary">Play sound for notifications</div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="sound-effects" checked>
+                    <span class="switch__slider"></span>
+                </label>
+            </div>
+            <div class="settings-item">
+                <div class="flex-1">
+                    <div class="font-medium text-sm">Vibration</div>
+                    <div class="text-xs text-secondary">Vibrate on notifications</div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="vibration" checked>
+                    <span class="switch__slider"></span>
+                </label>
+            </div>
+            <div class="settings-item">
+                <div class="flex-1">
+                    <div class="font-medium text-sm">Assignment Reminders</div>
+                    <div class="text-xs text-secondary">Remind before due dates</div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="assignment-reminders" checked>
+                    <span class="switch__slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data & Storage -->
+    <div class="card mb-4">
+        <div class="card__header">
+            <h3 class="section-title">💾 Data & Storage</h3>
+        </div>
+        <div class="card__body" style="padding-top: 0;">
+            <div class="settings-item">
+                <div class="flex-1">
+                    <div class="font-medium text-sm">Cache Size</div>
+                    <div class="text-xs text-secondary">Clear cached data to free space</div>
+                </div>
+                <button class="btn btn-sm btn-outline-danger" id="clear-cache-btn">
+                    Clear (2.4 MB)
+                </button>
+            </div>
+            <div class="settings-item">
+                <div class="flex-1">
+                    <div class="font-medium text-sm">Offline Data</div>
+                    <div class="text-xs text-secondary">Download data for offline use</div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="offline-data" checked>
+                    <span class="switch__slider"></span>
+                </label>
+            </div>
+            <div class="settings-item">
+                <div class="flex-1">
+                    <div class="font-medium text-sm">Export Data</div>
+                    <div class="text-xs text-secondary">Download all your data</div>
+                </div>
+                <button class="btn btn-sm btn-outline-primary">Export</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account -->
+    <div class="card mb-4">
+        <div class="card__header">
+            <h3 class="section-title">👤 Account</h3>
+        </div>
+        <div class="card__body" style="padding-top: 0;">
+            <div class="settings-item" onclick="window.location.hash='#/profile'">
+                <div class="flex-1">
+                    <div class="font-medium text-sm">Edit Profile</div>
+                    <div class="text-xs text-secondary">Update your personal information</div>
+                </div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </div>
+            <div class="settings-item">
+                <div class="flex-1">
+                    <div class="font-medium text-sm">Change Password</div>
+                    <div class="text-xs text-secondary">Update your password</div>
+                </div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </div>
+            <div class="settings-item">
+                <div class="flex-1">
+                    <div class="font-medium text-sm text-error">Delete Account</div>
+                    <div class="text-xs text-secondary">Permanently delete your data</div>
+                </div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- About -->
+    <div class="card mb-4">
+        <div class="card__header">
+            <h3 class="section-title">ℹ️ About</h3>
+        </div>
+        <div class="card__body" style="padding-top: 0;">
+            <div class="settings-item">
+                <div class="flex-1">
+                    <div class="font-medium text-sm">Version</div>
+                </div>
+                <span class="text-sm text-secondary">v1.0.0</span>
+            </div>
+            <div class="settings-item" onclick="window.location.hash='#/about'">
+                <div class="flex-1">
+                    <div class="font-medium text-sm">About Student App</div>
+                </div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </div>
+            <div class="settings-item" onclick="window.location.hash='#/contact'">
+                <div class="flex-1">
+                    <div class="font-medium text-sm">Contact Us</div>
+                </div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout -->
+    <button class="btn btn-outline-danger btn-block mb-6" id="settings-logout">
+        🚪 Logout
+    </button>
+</div>
+
+<style>
+    .settings-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--space-3) 0;
+        border-bottom: 1px solid var(--border-color);
+        gap: var(--space-4);
+        cursor: pointer;
+        transition: background-color var(--transition-fast);
+    }
+    
+    .settings-item:last-child {
+        border-bottom: none;
+    }
+    
+    .settings-item:hover {
+        background-color: var(--bg-hover);
+        margin: 0 calc(-1 * var(--space-5));
+        padding-left: var(--space-5);
+        padding-right: var(--space-5);
+        border-radius: var(--border-radius-md);
+    }
+    
+    .theme-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid var(--border-color);
+        background: var(--bg-primary);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        transition: all var(--transition-fast);
+    }
+    
+    .theme-btn--active {
+        border-color: var(--color-primary-500);
+        background: var(--color-primary-50);
+    }
+    
+    .settings-range {
+        width: 80px;
+        accent-color: var(--color-primary-500);
+    }
+</style>
+
+<script>
+    (function() {
+        // Theme buttons
+        document.querySelectorAll('.theme-btn').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('theme-btn--active'));
+                btn.classList.add('theme-btn--active');
+                
+                const theme = btn.dataset.theme;
+                const { default: themeManager } = await import('../js/theme-manager.js');
+                themeManager.setTheme(theme);
+            });
+        });
+        
+        // Toggle switches
+        document.querySelectorAll('.switch input').forEach(toggle => {
+            toggle.addEventListener('change', async () => {
+                const id = toggle.id;
+                const { default: state } = await import('../js/state-manager.js');
+                
+                switch(id) {
+                    case 'push-notifications':
+                        state.set('preferences.notifications', toggle.checked);
+                        break;
+                    case 'sound-effects':
+                        state.set('preferences.soundEnabled', toggle.checked);
+                        break;
+                    case 'vibration':
+                        state.set('preferences.vibrationEnabled', toggle.checked);
+                        break;
+                }
+            });
+        });
+        
+        // Clear cache
+        document.getElementById('clear-cache-btn')?.addEventListener('click', async () => {
+            if (confirm('Clear all cached data?')) {
+                const { default: pwa } = await import('../js/pwa.js');
+                await pwa.clearCaches();
+                const { default: notifications } = await import('../js/notifications.js');
+                notifications.success('Cache cleared successfully!');
+                document.getElementById('clear-cache-btn').textContent = 'Clear (0 MB)';
+            }
+        });
+        
+        // Logout
+        document.getElementById('settings-logout')?.addEventListener('click', async () => {
+            if (confirm('Are you sure you want to logout?')) {
+                const { default: auth } = await import('../js/auth.js');
+                await auth.logout();
+                window.location.hash = '#/login';
+            }
+        });
+    })();
+</script>
