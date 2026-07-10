@@ -1,0 +1,166 @@
+<!-- ============================================
+   SPLASH SCREEN
+   First screen shown when app launches
+   ============================================ -->
+<div class="splash-layout" id="splash-screen">
+  <div class="splash-content">
+    <!-- Logo -->
+    <div class="splash-logo animate-scale-in">
+      <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Graduation Cap -->
+        <circle cx="60" cy="60" r="55" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2" />
+        <path d="M30 75L60 55L90 75L60 85L30 75Z" fill="white" />
+        <path d="M45 72L60 62L75 72" fill="white" opacity="0.7" />
+        <path d="M60 55V70" stroke="white" stroke-width="3" stroke-linecap="round" />
+        <rect x="54" y="70" width="12" height="15" rx="3" fill="white" />
+        <path d="M50 85L60 75L70 85" stroke="white" stroke-width="2" fill="none" />
+      </svg>
+    </div>
+    
+    <!-- App Name -->
+    <h1 class="splash-title animate-slide-up delay-300">
+      Student<span class="text-highlight">App</span>
+    </h1>
+    
+    <!-- Tagline -->
+    <p class="splash-tagline animate-slide-up delay-500">
+      Your Complete Academic Companion
+    </p>
+    
+    <!-- Loading Indicator -->
+    <div class="splash-loader animate-fade-in delay-700">
+      <div class="loading-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    
+    <!-- Version -->
+    <p class="splash-version animate-fade-in delay-1000">
+      v1.0.0
+    </p>
+  </div>
+  
+  <!-- Background decoration -->
+  <div class="splash-bg-decoration">
+    <div class="splash-circle splash-circle--1"></div>
+    <div class="splash-circle splash-circle--2"></div>
+    <div class="splash-circle splash-circle--3"></div>
+  </div>
+</div>
+
+<style>
+  /* Splash-specific styles */
+  .splash-layout {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .splash-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  
+  .splash-logo {
+    margin-bottom: var(--space-4);
+  }
+  
+  .splash-title {
+    font-size: 2.5rem;
+    font-weight: var(--font-extrabold);
+    color: #FFFFFF;
+    letter-spacing: var(--tracking-tight);
+  }
+  
+  .splash-title .text-highlight {
+    background: linear-gradient(180deg, transparent 60%, rgba(255, 255, 255, 0.3) 60%);
+    padding: 0 0.1em;
+  }
+  
+  .splash-tagline {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: var(--font-light);
+  }
+  
+  .splash-loader {
+    margin-top: var(--space-8);
+  }
+  
+  .splash-loader .loading-dots span {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .splash-version {
+    position: absolute;
+    bottom: var(--space-8);
+    font-size: var(--text-xs);
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Background animations */
+  .splash-bg-decoration {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .splash-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .splash-circle--1 {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+  }
+  
+  .splash-circle--2 {
+    width: 200px;
+    height: 200px;
+    bottom: 10%;
+    left: -50px;
+    animation-delay: 2s;
+    animation-duration: 8s;
+  }
+  
+  .splash-circle--3 {
+    width: 150px;
+    height: 150px;
+    top: 40%;
+    right: 20%;
+    animation-delay: 4s;
+    animation-duration: 7s;
+  }
+</style>
+
+<script>
+  // Auto-navigate after delay
+  (function() {
+    const isFirstLaunch = true; // Will be replaced by actual check
+    
+    setTimeout(() => {
+      if (isFirstLaunch) {
+        // Navigate to onboarding
+        window.location.hash = '#/onboarding';
+      } else {
+        // Navigate to login or dashboard
+        const isLoggedIn = false; // Will be replaced by actual check
+        window.location.hash = isLoggedIn ? '#/dashboard' : '#/login';
+      }
+    }, 2500);
+  })();
+</script>
