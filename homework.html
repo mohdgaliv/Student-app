@@ -1,0 +1,227 @@
+<!-- ============================================
+   HOMEWORK PAGE
+   View and manage daily homework tasks
+   ============================================ -->
+<div class="page-content page-content--with-header page-content--with-bottom-nav" id="homework-page">
+  <!-- Page Title -->
+  <div class="page-title">
+    <div>
+      <h2>Homework</h2>
+      <p class="page-subtitle">Manage your daily homework tasks</p>
+    </div>
+    <button class="btn btn-primary btn-sm" id="add-homework-btn">
+      + Add
+    </button>
+  </div>
+  
+  <!-- Filter Tabs -->
+  <div class="tabs mb-4">
+    <button class="tab tab--active" data-filter="all">All</button>
+    <button class="tab" data-filter="pending">Pending</button>
+    <button class="tab" data-filter="completed">Completed</button>
+    <button class="tab" data-filter="overdue">Overdue</button>
+  </div>
+  
+  <!-- Homework List -->
+  <div class="list-layout" id="homework-list">
+    <!-- Homework Item 1 - Pending -->
+    <div class="card card--bordered-warning" data-status="pending" style="border-left-width: 4px;">
+      <div class="card__body">
+        <div class="flex justify-between items-start mb-2">
+          <div class="flex items-center gap-2">
+            <span class="badge badge--warning">Pending</span>
+            <span class="text-xs text-secondary">Mathematics</span>
+          </div>
+          <span class="text-xs text-error font-medium">Due Tomorrow</span>
+        </div>
+        <h4 class="font-semibold mb-1">Calculus - Exercise 5.2</h4>
+        <p class="text-sm text-secondary mb-3">
+          Solve problems 1-20 from Chapter 5, Section 2. Show all working steps.
+        </p>
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            <span class="text-xs text-secondary">15 Oct 2024</span>
+          </div>
+          <div class="flex gap-2">
+            <button class="btn btn-sm btn-outline-primary mark-complete-btn" data-id="1">
+              ✓ Done
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Homework Item 2 - Completed -->
+    <div class="card" data-status="completed" style="border-left: 4px solid var(--color-success-500);">
+      <div class="card__body" style="opacity: 0.8;">
+        <div class="flex justify-between items-start mb-2">
+          <div class="flex items-center gap-2">
+            <span class="badge badge--success">Completed</span>
+            <span class="text-xs text-secondary">Physics</span>
+          </div>
+          <span class="text-xs text-success font-medium">Submitted</span>
+        </div>
+        <h4 class="font-semibold mb-1" style="text-decoration: line-through;">Lab Report - Experiment 4</h4>
+        <p class="text-sm text-secondary mb-3">
+          Write a complete lab report for the Ohm's Law experiment.
+        </p>
+        <div class="flex justify-between items-center">
+          <span class="text-xs text-tertiary">Submitted on 12 Oct 2024</span>
+          <span class="text-xs text-success">✓ Graded: A</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Homework Item 3 - Overdue -->
+    <div class="card card--bordered-error" data-status="overdue" style="border-left-width: 4px;">
+      <div class="card__body">
+        <div class="flex justify-between items-start mb-2">
+          <div class="flex items-center gap-2">
+            <span class="badge badge--error">Overdue</span>
+            <span class="text-xs text-secondary">Chemistry</span>
+          </div>
+          <span class="text-xs text-error font-medium">3 days late</span>
+        </div>
+        <h4 class="font-semibold mb-1">Organic Chemistry Worksheet</h4>
+        <p class="text-sm text-secondary mb-3">
+          Complete the organic compounds naming worksheet.
+        </p>
+        <div class="flex justify-between items-center">
+          <span class="text-xs text-error">Was due: 10 Oct 2024</span>
+          <button class="btn btn-sm btn-primary mark-complete-btn" data-id="3">
+            Submit Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Empty State (hidden by default) -->
+  <div class="empty-state-center" id="homework-empty" style="display:none;">
+    <div class="empty-state__icon">📝</div>
+    <h3 class="empty-state__title">No Homework</h3>
+    <p class="empty-state__description">You're all caught up! Add new homework when assigned.</p>
+    <button class="btn btn-primary" id="empty-add-btn">Add Homework</button>
+  </div>
+  
+  <!-- Add Homework Modal -->
+  <div class="modal-overlay" id="homework-modal" style="display:none;">
+    <div class="modal-content">
+      <div class="modal__header">
+        <h3 class="modal__title">Add Homework</h3>
+        <button class="modal__close" id="close-homework-modal">✕</button>
+      </div>
+      <div class="modal__body">
+        <form class="form-layout" id="homework-form">
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <select class="form-input form-select" name="subject" required>
+              <option value="">Select Subject</option>
+              <option value="mathematics">Mathematics</option>
+              <option value="physics">Physics</option>
+              <option value="chemistry">Chemistry</option>
+              <option value="cs">Computer Science</option>
+              <option value="english">English</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Title</label>
+            <input type="text" class="form-input" name="title" placeholder="Homework title" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Description</label>
+            <textarea class="form-input form-textarea" name="description" placeholder="Details..." rows="3"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Due Date</label>
+              <input type="date" class="form-input" name="dueDate" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Priority</label>
+              <select class="form-input form-select" name="priority">
+                <option value="normal">Normal</option>
+                <option value="high">High</option>
+                <option value="urgent">Urgent</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Add Homework</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // Filter tabs
+    document.querySelectorAll('.tab[data-filter]').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab[data-filter]').forEach(t => t.classList.remove('tab--active'));
+        tab.classList.add('tab--active');
+        
+        const filter = tab.dataset.filter;
+        const items = document.querySelectorAll('#homework-list .card');
+        
+        items.forEach(item => {
+          if (filter === 'all' || item.dataset.status === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Modal toggle
+    document.getElementById('add-homework-btn')?.addEventListener('click', () => {
+      document.getElementById('homework-modal').style.display = 'flex';
+    });
+    
+    document.getElementById('empty-add-btn')?.addEventListener('click', () => {
+      document.getElementById('homework-modal').style.display = 'flex';
+    });
+    
+    document.getElementById('close-homework-modal')?.addEventListener('click', () => {
+      document.getElementById('homework-modal').style.display = 'none';
+    });
+    
+    // Mark as complete
+    document.querySelectorAll('.mark-complete-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const card = btn.closest('.card');
+        card.style.opacity = '0.5';
+        card.style.textDecoration = 'line-through';
+        btn.disabled = true;
+        btn.textContent = '✓ Completed';
+        
+        const { default: notifications } = await import('../js/notifications.js');
+        notifications.success('Homework marked as complete!');
+      });
+    });
+    
+    // Add homework form
+    document.getElementById('homework-form')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+      
+      // Close modal
+      document.getElementById('homework-modal').style.display = 'none';
+      
+      const { default: notifications } = await import('../js/notifications.js');
+      notifications.success('Homework added successfully!');
+      
+      // Reset form
+      e.target.reset();
+    });
+  })();
+</script>
