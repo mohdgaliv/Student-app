@@ -1,0 +1,708 @@
+/* ============================================
+   LAYOUT SYSTEM
+   Containers, Grids, Flexbox, Page Layouts
+   ============================================ */
+
+/* ========== CONTAINERS ========== */
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+.container-sm {
+    max-width: 640px;
+}
+
+.container-md {
+    max-width: 768px;
+}
+
+.container-lg {
+    max-width: 1024px;
+}
+
+.container-xl {
+    max-width: 1200px;
+}
+
+.container-fluid {
+    max-width: none;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+/* ========== FLEXBOX UTILITIES ========== */
+.flex {
+    display: flex;
+}
+
+.flex-inline {
+    display: inline-flex;
+}
+
+/* Direction */
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-col-reverse {
+    flex-direction: column-reverse;
+}
+
+/* Wrap */
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+/* Justify Content */
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+/* Align Items */
+.items-start {
+    align-items: flex-start;
+}
+
+.items-end {
+    align-items: flex-end;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-baseline {
+    align-items: baseline;
+}
+
+.items-stretch {
+    align-items: stretch;
+}
+
+/* Align Self */
+.self-start {
+    align-self: flex-start;
+}
+
+.self-end {
+    align-self: flex-end;
+}
+
+.self-center {
+    align-self: center;
+}
+
+.self-stretch {
+    align-self: stretch;
+}
+
+/* Align Content */
+.content-start {
+    align-content: flex-start;
+}
+
+.content-end {
+    align-content: flex-end;
+}
+
+.content-center {
+    align-content: center;
+}
+
+.content-between {
+    align-content: space-between;
+}
+
+.content-around {
+    align-content: space-around;
+}
+
+/* Gap */
+.gap-0 { gap: 0; }
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+.gap-5 { gap: var(--space-5); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+
+/* ========== GRID SYSTEM ========== */
+.grid {
+    display: grid;
+}
+
+/* Grid Columns */
+.grid-cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-cols-5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-cols-6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.grid-cols-12 {
+    grid-template-columns: repeat(12, 1fr);
+}
+
+/* Auto-fit responsive grid */
+.grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid-auto-fit-sm {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.grid-auto-fit-lg {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Grid Column Span */
+.col-span-1 { grid-column: span 1; }
+.col-span-2 { grid-column: span 2; }
+.col-span-3 { grid-column: span 3; }
+.col-span-4 { grid-column: span 4; }
+.col-span-5 { grid-column: span 5; }
+.col-span-6 { grid-column: span 6; }
+.col-span-12 { grid-column: span 12; }
+.col-span-full { grid-column: 1 / -1; }
+
+/* Grid Row Span */
+.row-span-1 { grid-row: span 1; }
+.row-span-2 { grid-row: span 2; }
+.row-span-3 { grid-row: span 3; }
+.row-span-full { grid-row: 1 / -1; }
+
+/* Grid Gap */
+.grid-gap-0 { gap: 0; }
+.grid-gap-1 { gap: var(--space-1); }
+.grid-gap-2 { gap: var(--space-2); }
+.grid-gap-3 { gap: var(--space-3); }
+.grid-gap-4 { gap: var(--space-4); }
+.grid-gap-5 { gap: var(--space-5); }
+.grid-gap-6 { gap: var(--space-6); }
+.grid-gap-8 { gap: var(--space-8); }
+
+/* ========== PAGE LAYOUT STRUCTURE ========== */
+
+/* Main App Layout */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+/* With Sidebar */
+.app-layout--with-sidebar {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    grid-template-rows: 1fr;
+    min-height: 100vh;
+    min-height: 100dvh;
+    transition: grid-template-columns var(--transition-base);
+}
+
+.app-layout--with-sidebar.sidebar-collapsed {
+    grid-template-columns: var(--sidebar-collapsed-width) 1fr;
+}
+
+/* Main Content Area */
+.main-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* Prevent flex overflow */
+    background-color: var(--bg-secondary);
+}
+
+/* Page Content */
+.page-content {
+    flex: 1;
+    padding: var(--space-6);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* With Bottom Navigation (Mobile) */
+.page-content--with-bottom-nav {
+    padding-bottom: calc(var(--bottom-nav-height) + var(--space-6));
+}
+
+/* With Header */
+.page-content--with-header {
+    padding-top: calc(var(--header-height) + var(--space-6));
+}
+
+/* ========== SIDEBAR LAYOUT ========== */
+.sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: var(--bg-primary);
+    border-right: 1px solid var(--border-color);
+    z-index: var(--z-fixed);
+    transition: width var(--transition-base);
+    width: var(--sidebar-width);
+    padding: var(--space-4);
+}
+
+.sidebar.sidebar-collapsed {
+    width: var(--sidebar-collapsed-width);
+    padding: var(--space-2);
+}
+
+/* ========== HEADER LAYOUT ========== */
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    height: var(--header-height);
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--space-6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.app-header__left,
+.app-header__right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.app-header__center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ========== BOTTOM NAVIGATION LAYOUT ========== */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-fixed);
+    height: var(--bottom-nav-height);
+    background-color: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ========== PAGE-SPECIFIC LAYOUTS ========== */
+
+/* Splash Screen */
+.splash-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: linear-gradient(135deg, var(--color-primary-600), var(--color-secondary-600));
+    color: #FFFFFF;
+    text-align: center;
+    padding: var(--space-8);
+}
+
+/* Auth Pages (Login, Register) */
+.auth-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: var(--space-6);
+    background-color: var(--bg-secondary);
+}
+
+.auth-layout__card {
+    max-width: 440px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-2xl);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-8);
+}
+
+/* Dashboard Layout */
+.dashboard-layout {
+    display: grid;
+    gap: var(--space-6);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Detail Page Layout */
+.detail-layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* List Page Layout */
+.list-layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+/* Two Column Layout */
+.two-col-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    align-items: start;
+}
+
+.two-col-layout--narrow-wide {
+    grid-template-columns: 300px 1fr;
+}
+
+.two-col-layout--wide-narrow {
+    grid-template-columns: 1fr 300px;
+}
+
+/* Three Column Layout */
+.three-col-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+/* ========== CARD GRID ========== */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+}
+
+/* ========== FORM LAYOUT ========== */
+.form-layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.form-layout--inline {
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-4);
+}
+
+/* ========== MODAL LAYOUT ========== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-modal-backdrop);
+    background-color: var(--overlay-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+    animation: fadeIn var(--transition-base);
+}
+
+.modal-content {
+    position: relative;
+    z-index: var(--z-modal);
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-2xl);
+    box-shadow: var(--shadow-2xl);
+    max-width: 520px;
+    width: 100%;
+    max-height: 90vh;
+    max-height: 90dvh;
+    overflow-y: auto;
+    padding: var(--space-6);
+    animation: slideUp var(--transition-bounce);
+}
+
+.modal-content--sm {
+    max-width: 400px;
+}
+
+.modal-content--lg {
+    max-width: 700px;
+}
+
+.modal-content--full {
+    max-width: none;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100vh;
+    max-height: 100dvh;
+    border-radius: 0;
+}
+
+/* ========== TOAST LAYOUT ========== */
+.toast-container {
+    position: fixed;
+    top: var(--space-4);
+    right: var(--space-4);
+    z-index: var(--z-toast);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    max-width: 400px;
+    width: calc(100% - var(--space-8));
+}
+
+/* ========== CENTERED CONTENT ========== */
+.centered-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+/* Empty State Center */
+.empty-state-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-12) var(--space-6);
+    min-height: 400px;
+}
+
+/* ========== STICKY ELEMENTS ========== */
+.sticky-top {
+    position: sticky;
+    top: var(--header-height);
+    z-index: var(--z-sticky);
+}
+
+.sticky-bottom {
+    position: sticky;
+    bottom: 0;
+    z-index: var(--z-sticky);
+}
+
+/* ========== OVERFLOW HANDLING ========== */
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* ========== DIVIDERS ========== */
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: var(--space-4) 0;
+}
+
+.divider--vertical {
+    width: 1px;
+    height: 100%;
+    min-height: 20px;
+}
+
+/* ========== ASPECT RATIO BOXES ========== */
+.aspect-ratio-1 { aspect-ratio: 1; }
+.aspect-ratio-16-9 { aspect-ratio: 16/9; }
+.aspect-ratio-4-3 { aspect-ratio: 4/3; }
+.aspect-ratio-3-2 { aspect-ratio: 3/2; }
+
+/* ========== VISIBILITY ========== */
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.opacity-0 { opacity: 0; }
+.opacity-50 { opacity: 0.5; }
+.opacity-100 { opacity: 1; }
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* Tablet: 768px and below */
+@media (max-width: 768px) {
+    .app-layout--with-sidebar {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: var(--z-fixed);
+        transform: translateX(-100%);
+        transition: transform var(--transition-base);
+    }
+    
+    .sidebar.sidebar-open {
+        transform: translateX(0);
+    }
+    
+    .two-col-layout,
+    .two-col-layout--narrow-wide,
+    .two-col-layout--wide-narrow {
+        grid-template-columns: 1fr;
+    }
+    
+    .three-col-layout {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .page-content {
+        padding: var(--space-4);
+    }
+    
+    .app-header {
+        height: var(--header-height-mobile);
+        padding: 0 var(--space-4);
+    }
+}
+
+/* Mobile: 480px and below */
+@media (max-width: 480px) {
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg,
+    .container-xl {
+        padding-left: var(--space-3);
+        padding-right: var(--space-3);
+    }
+    
+    .page-content {
+        padding: var(--space-3);
+    }
+    
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .three-col-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .auth-layout__card {
+        padding: var(--space-6);
+    }
+    
+    .modal-content {
+        padding: var(--space-4);
+        border-radius: var(--border-radius-xl);
+    }
+    
+    .grid-cols-4,
+    .grid-cols-5,
+    .grid-cols-6 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
