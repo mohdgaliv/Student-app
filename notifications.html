@@ -1,0 +1,279 @@
+<!-- ============================================
+   NOTIFICATIONS PAGE
+   All notifications and alerts
+   ============================================ -->
+<div class="page-content page-content--with-header page-content--with-bottom-nav" id="notifications-page">
+    <!-- Page Title -->
+    <div class="page-title">
+        <div>
+            <h2>Notifications</h2>
+            <p class="page-subtitle">Stay updated with your studies</p>
+        </div>
+        <button class="btn btn-sm btn-ghost" id="mark-all-read">
+            Mark all read
+        </button>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="tabs mb-4">
+        <button class="tab tab--active" data-filter="all">All</button>
+        <button class="tab" data-filter="unread">Unread <span class="tab__badge">3</span></button>
+        <button class="tab" data-filter="assignments">Assignments</button>
+        <button class="tab" data-filter="exams">Exams</button>
+    </div>
+
+    <!-- Today -->
+    <div class="section-header">
+        <h3 class="section-title">Today</h3>
+    </div>
+    <div class="list-layout" id="notifications-today">
+        <!-- Unread Notification -->
+        <div class="card notification-card notification-card--unread" data-type="assignments">
+            <div class="card__body" style="padding: var(--space-3);">
+                <div class="flex gap-3">
+                    <div class="notification-icon" style="background: var(--color-error-100);">
+                        <span style="font-size: 18px;">📋</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-semibold text-sm">Assignment Due Tomorrow</h4>
+                            <span class="text-xs text-tertiary">2h ago</span>
+                        </div>
+                        <p class="text-xs text-secondary mt-1">
+                            Calculus Problem Set 4 is due tomorrow. Make sure to submit before midnight.
+                        </p>
+                        <div class="flex gap-2 mt-2">
+                            <button class="btn btn-xs btn-primary">View</button>
+                            <button class="btn btn-xs btn-ghost">Dismiss</button>
+                        </div>
+                    </div>
+                    <div class="unread-dot"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Read Notification -->
+        <div class="card notification-card" data-type="exams">
+            <div class="card__body" style="padding: var(--space-3); opacity: 0.7;">
+                <div class="flex gap-3">
+                    <div class="notification-icon" style="background: var(--color-warning-100);">
+                        <span style="font-size: 18px;">📅</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-semibold text-sm">Mid-term Schedule Released</h4>
+                            <span class="text-xs text-tertiary">5h ago</span>
+                        </div>
+                        <p class="text-xs text-secondary mt-1">
+                            Mid-term exam schedule for Semester 3 has been published. Check your timetable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Yesterday -->
+    <div class="section-header mt-4">
+        <h3 class="section-title">Yesterday</h3>
+    </div>
+    <div class="list-layout" id="notifications-yesterday">
+        <!-- Graded Assignment -->
+        <div class="card notification-card" data-type="assignments">
+            <div class="card__body" style="padding: var(--space-3); opacity: 0.7;">
+                <div class="flex gap-3">
+                    <div class="notification-icon" style="background: var(--color-success-100);">
+                        <span style="font-size: 18px;">✅</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-semibold text-sm">Assignment Graded: Data Structures</h4>
+                            <span class="text-xs text-tertiary">1d ago</span>
+                        </div>
+                        <p class="text-xs text-secondary mt-1">
+                            You scored 18/20 on Data Structures Implementation. Grade: A+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Result -->
+        <div class="card notification-card" data-type="exams">
+            <div class="card__body" style="padding: var(--space-3); opacity: 0.7;">
+                <div class="flex gap-3">
+                    <div class="notification-icon" style="background: var(--color-primary-100);">
+                        <span style="font-size: 18px;">🎯</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-semibold text-sm">Quiz Result: Periodic Table</h4>
+                            <span class="text-xs text-tertiary">1d ago</span>
+                        </div>
+                        <p class="text-xs text-secondary mt-1">
+                            You scored 9/10 (90%) in Chemistry quiz. Great job!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earlier -->
+    <div class="section-header mt-4">
+        <h3 class="section-title">Earlier This Week</h3>
+    </div>
+    <div class="list-layout" id="notifications-earlier">
+        <!-- Attendance Alert -->
+        <div class="card notification-card notification-card--unread" data-type="exams">
+            <div class="card__body" style="padding: var(--space-3);">
+                <div class="flex gap-3">
+                    <div class="notification-icon" style="background: var(--color-error-100);">
+                        <span style="font-size: 18px;">⚠️</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-semibold text-sm">Low Attendance Warning</h4>
+                            <span class="text-xs text-tertiary">3d ago</span>
+                        </div>
+                        <p class="text-xs text-secondary mt-1">
+                            Your Chemistry attendance is below 75%. Please ensure regular attendance.
+                        </p>
+                        <div class="flex gap-2 mt-2">
+                            <button class="btn btn-xs btn-outline-primary">View Attendance</button>
+                        </div>
+                    </div>
+                    <div class="unread-dot"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teacher Message -->
+        <div class="card notification-card" data-type="assignments">
+            <div class="card__body" style="padding: var(--space-3); opacity: 0.7;">
+                <div class="flex gap-3">
+                    <div class="notification-icon" style="background: var(--bg-tertiary);">
+                        <span style="font-size: 18px;">💬</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-semibold text-sm">Message from Prof. Sharma</h4>
+                            <span class="text-xs text-tertiary">4d ago</span>
+                        </div>
+                        <p class="text-xs text-secondary mt-1">
+                            Extra class on Saturday for doubt solving. Please attend if you have questions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievement -->
+        <div class="card notification-card" data-type="achievements">
+            <div class="card__body" style="padding: var(--space-3); opacity: 0.7;">
+                <div class="flex gap-3">
+                    <div class="notification-icon" style="background: var(--color-warning-100);">
+                        <span style="font-size: 18px;">🏆</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-semibold text-sm">Achievement Unlocked: 7-Day Streak</h4>
+                            <span class="text-xs text-tertiary">5d ago</span>
+                        </div>
+                        <p class="text-xs text-secondary mt-1">
+                            Congratulations! You've studied for 7 consecutive days. Keep it up!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state-center" id="notifications-empty" style="display:none;">
+        <div class="empty-state__icon">🔔</div>
+        <h3 class="empty-state__title">No Notifications</h3>
+        <p class="empty-state__description">You're all caught up! New notifications will appear here.</p>
+    </div>
+</div>
+
+<style>
+    .notification-card {
+        position: relative;
+        transition: all var(--transition-fast);
+    }
+    
+    .notification-card--unread {
+        background-color: var(--color-primary-50);
+        border-left: 3px solid var(--color-primary-500);
+    }
+    
+    .notification-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    
+    .unread-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--color-primary-500);
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-top: 6px;
+    }
+</style>
+
+<script>
+    (function() {
+        // Filter tabs
+        document.querySelectorAll('#notifications-page .tab[data-filter]').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('#notifications-page .tab[data-filter]').forEach(t => t.classList.remove('tab--active'));
+                tab.classList.add('tab--active');
+                
+                const filter = tab.dataset.filter;
+                const cards = document.querySelectorAll('#notifications-page .notification-card');
+                
+                cards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                    } else if (filter === 'unread') {
+                        card.style.display = card.classList.contains('notification-card--unread') ? 'block' : 'none';
+                    } else {
+                        card.style.display = card.dataset.type === filter ? 'block' : 'none';
+                    }
+                });
+            });
+        });
+        
+        // Mark all read
+        document.getElementById('mark-all-read')?.addEventListener('click', () => {
+            document.querySelectorAll('.notification-card--unread').forEach(card => {
+                card.classList.remove('notification-card--unread');
+                card.querySelector('.card__body').style.opacity = '0.7';
+                const dot = card.querySelector('.unread-dot');
+                if (dot) dot.remove();
+            });
+            
+            import('../js/notifications.js').then(module => {
+                module.default.success('All notifications marked as read');
+            });
+        });
+        
+        // Dismiss buttons
+        document.querySelectorAll('.notification-card .btn-ghost').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const card = e.target.closest('.notification-card');
+                card.style.transition = 'all 0.3s ease';
+                card.style.opacity = '0';
+                card.style.transform = 'translateX(100px)';
+                setTimeout(() => card.remove(), 300);
+            });
+        });
+    })();
+</script>
