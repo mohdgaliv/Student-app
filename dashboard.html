@@ -1,0 +1,251 @@
+<!-- ============================================
+   DASHBOARD PAGE
+   Main overview of student's academic activity
+   ============================================ -->
+<div class="page-content page-content--with-header page-content--with-bottom-nav" id="dashboard-page">
+  <!-- Welcome Header -->
+  <div class="dashboard-welcome">
+    <div class="flex items-center gap-3">
+      <div class="avatar avatar--lg" id="dashboard-avatar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+      </div>
+      <div>
+        <p class="text-sm text-secondary">Good Morning 👋</p>
+        <h2 class="text-xl font-bold" id="dashboard-username">Student</h2>
+      </div>
+    </div>
+    <div class="flex gap-2">
+      <button class="btn btn-icon btn-ghost" aria-label="Notifications" onclick="window.location.hash='#/notifications'">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" />
+          <path d="M13.73 21a2 2 0 01-3.46 0" />
+        </svg>
+        <span class="notification-dot" id="notification-badge" style="display:none;"></span>
+      </button>
+      <button class="btn btn-icon btn-ghost" aria-label="Search" onclick="window.location.hash='#/search'">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Quick Stats -->
+  <div class="grid grid-cols-2 grid-gap-3 mb-6">
+    <div class="stat-card card">
+      <div class="stat-card__icon">📚</div>
+      <div class="stat-card__value" id="stat-subjects">6</div>
+      <div class="stat-card__label">Subjects</div>
+    </div>
+    <div class="stat-card card">
+      <div class="stat-card__icon">✅</div>
+      <div class="stat-card__value" id="stat-attendance">85%</div>
+      <div class="stat-card__label">Attendance</div>
+    </div>
+    <div class="stat-card card">
+      <div class="stat-card__icon">📝</div>
+      <div class="stat-card__value" id="stat-assignments">4</div>
+      <div class="stat-card__label">Pending</div>
+    </div>
+    <div class="stat-card card">
+      <div class="stat-card__icon">⭐</div>
+      <div class="stat-card__value" id="stat-gpa">3.8</div>
+      <div class="stat-card__label">GPA</div>
+    </div>
+  </div>
+  
+  <!-- Today's Schedule -->
+  <div class="section-header">
+    <h3 class="section-title">📅 Today's Schedule</h3>
+    <a href="#/timetable" class="text-sm text-link">View All</a>
+  </div>
+  <div class="list-layout mb-6" id="today-schedule">
+    <!-- Schedule items rendered by JS -->
+    <div class="card card--bordered-primary" style="padding: var(--space-3);">
+      <div class="flex items-center gap-3">
+        <div class="text-center" style="min-width: 50px;">
+          <div class="text-xs text-secondary">09:00</div>
+          <div class="text-xs text-secondary">10:00</div>
+        </div>
+        <div style="width: 2px; height: 40px; background: var(--color-primary-500); border-radius: 1px;"></div>
+        <div>
+          <div class="font-semibold text-sm">Mathematics</div>
+          <div class="text-xs text-secondary">Room 301 • Prof. Sharma</div>
+        </div>
+      </div>
+    </div>
+    <div class="card card--bordered-primary" style="padding: var(--space-3);">
+      <div class="flex items-center gap-3">
+        <div class="text-center" style="min-width: 50px;">
+          <div class="text-xs text-secondary">11:00</div>
+          <div class="text-xs text-secondary">12:00</div>
+        </div>
+        <div style="width: 2px; height: 40px; background: var(--color-secondary-500); border-radius: 1px;"></div>
+        <div>
+          <div class="font-semibold text-sm">Physics Lab</div>
+          <div class="text-xs text-secondary">Lab 102 • Dr. Patel</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Upcoming Assignments -->
+  <div class="section-header">
+    <h3 class="section-title">📋 Upcoming Assignments</h3>
+    <a href="#/assignments" class="text-sm text-link">View All</a>
+  </div>
+  <div class="list-layout mb-6" id="upcoming-assignments">
+    <div class="card card--interactive" onclick="window.location.hash='#/assignments'">
+      <div class="card__body flex items-center gap-3">
+        <div class="badge badge--error">Due Tomorrow</div>
+        <div class="flex-1">
+          <div class="font-medium text-sm">Calculus Problem Set 4</div>
+          <div class="text-xs text-secondary">Mathematics • 10 problems</div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </div>
+    </div>
+    <div class="card card--interactive" onclick="window.location.hash='#/assignments'">
+      <div class="card__body flex items-center gap-3">
+        <div class="badge badge--warning">Due in 3 days</div>
+        <div class="flex-1">
+          <div class="font-medium text-sm">Physics Lab Report</div>
+          <div class="text-xs text-secondary">Physics • Experiment 7</div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Recent Notes -->
+  <div class="section-header">
+    <h3 class="section-title">📝 Recent Notes</h3>
+    <a href="#/notes" class="text-sm text-link">View All</a>
+  </div>
+  <div class="grid grid-cols-2 grid-gap-3 mb-6" id="recent-notes">
+    <div class="card card--interactive" style="padding: var(--space-4);" onclick="window.location.hash='#/notes'">
+      <div style="font-size: 24px; margin-bottom: var(--space-2);">📐</div>
+      <div class="font-medium text-sm truncate">Trigonometry Formulas</div>
+      <div class="text-xs text-secondary">Updated 2h ago</div>
+    </div>
+    <div class="card card--interactive" style="padding: var(--space-4);" onclick="window.location.hash='#/notes'">
+      <div style="font-size: 24px; margin-bottom: var(--space-2);">⚡</div>
+      <div class="font-medium text-sm truncate">Ohm's Law Notes</div>
+      <div class="text-xs text-secondary">Updated yesterday</div>
+    </div>
+    <div class="card card--interactive" style="padding: var(--space-4);" onclick="window.location.hash='#/notes'">
+      <div style="font-size: 24px; margin-bottom: var(--space-2);">💻</div>
+      <div class="font-medium text-sm truncate">Python Basics</div>
+      <div class="text-xs text-secondary">Updated 3 days ago</div>
+    </div>
+    <div class="card card--interactive" style="padding: var(--space-4);" onclick="window.location.hash='#/notes'">
+      <div style="font-size: 24px; margin-bottom: var(--space-2);">🧪</div>
+      <div class="font-medium text-sm truncate">Chemistry Equations</div>
+      <div class="text-xs text-secondary">Updated 1 week ago</div>
+    </div>
+  </div>
+  
+  <!-- AI Assistant Card -->
+  <div class="card" style="background: linear-gradient(135deg, var(--color-primary-500), var(--color-secondary-500)); color: white; padding: var(--space-5); margin-bottom: var(--space-6); cursor: pointer;" onclick="window.location.hash='#/ai-assistant'">
+    <div class="flex items-center gap-4">
+      <div style="font-size: 40px;">🤖</div>
+      <div class="flex-1">
+        <h3 class="text-lg font-bold" style="color: white;">AI Study Assistant</h3>
+        <p class="text-sm opacity-90">Get instant help with your doubts and homework</p>
+      </div>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+        <polyline points="9 18 15 12 9 6" />
+      </svg>
+    </div>
+  </div>
+  
+  <!-- Quick Actions -->
+  <div class="section-header">
+    <h3 class="section-title">⚡ Quick Actions</h3>
+  </div>
+  <div class="grid grid-cols-4 grid-gap-3 mb-6">
+    <button class="card text-center" style="padding: var(--space-4);" onclick="window.location.hash='#/quiz'">
+      <div style="font-size: 28px;">🎯</div>
+      <div class="text-xs font-medium mt-1">Quiz</div>
+    </button>
+    <button class="card text-center" style="padding: var(--space-4);" onclick="window.location.hash='#/mock-test'">
+      <div style="font-size: 28px;">📋</div>
+      <div class="text-xs font-medium mt-1">Mock Test</div>
+    </button>
+    <button class="card text-center" style="padding: var(--space-4);" onclick="window.location.hash='#/attendance'">
+      <div style="font-size: 28px;">📊</div>
+      <div class="text-xs font-medium mt-1">Attendance</div>
+    </button>
+    <button class="card text-center" style="padding: var(--space-4);" onclick="window.location.hash='#/subjects'">
+      <div style="font-size: 28px;">📚</div>
+      <div class="text-xs font-medium mt-1">Subjects</div>
+    </button>
+  </div>
+</div>
+
+<style>
+  .dashboard-welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-5);
+    padding: var(--space-4);
+    background: var(--card-bg);
+    border-radius: var(--border-radius-xl);
+    border: 1px solid var(--border-color);
+  }
+  
+  .notification-dot {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 8px;
+    height: 8px;
+    background: var(--color-error-500);
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+</style>
+
+<script>
+  (function() {
+    // Load user data and populate dashboard
+    async function loadDashboard() {
+      try {
+        const { default: state } = await import('../js/state-manager.js');
+        const user = state.get('auth.user');
+        
+        if (user) {
+          document.getElementById('dashboard-username').textContent = user.name || 'Student';
+        }
+        
+        // Update stats from state
+        const subjects = state.get('data.subjects', []);
+        document.getElementById('stat-subjects').textContent = subjects.length || '6';
+        
+        const attendance = state.get('data.attendance', []);
+        if (attendance.length > 0) {
+          const avgAttendance = Math.round(attendance.reduce((sum, a) => sum + a.percentage, 0) / attendance.length);
+          document.getElementById('stat-attendance').textContent = avgAttendance + '%';
+        }
+        
+        const assignments = state.get('data.assignments', []);
+        const pending = assignments.filter(a => a.status === 'pending').length;
+        document.getElementById('stat-assignments').textContent = pending || '4';
+        
+      } catch (error) {
+        console.error('Error loading dashboard:', error);
+      }
+    }
+    
+    loadDashboard();
+  })();
+</script>
