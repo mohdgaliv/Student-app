@@ -1,0 +1,226 @@
+<!-- ============================================
+   TEACHERS PAGE
+   Faculty directory with contact info
+   ============================================ -->
+<div class="page-content page-content--with-header page-content--with-bottom-nav" id="teachers-page">
+    <!-- Page Title -->
+    <div class="page-title">
+        <div>
+            <h2>Teachers</h2>
+            <p class="page-subtitle">Faculty directory</p>
+        </div>
+    </div>
+
+    <!-- Search -->
+    <div class="search-bar mb-4">
+        <svg class="search-bar__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="search" class="search-bar__input" placeholder="Search teachers..." id="teachers-search">
+    </div>
+
+    <!-- Department Filter -->
+    <div class="flex gap-2 mb-4" style="overflow-x: auto;" id="department-chips">
+        <button class="chip chip--active" data-dept="all">All</button>
+        <button class="chip" data-dept="mathematics">Mathematics</button>
+        <button class="chip" data-dept="physics">Physics</button>
+        <button class="chip" data-dept="chemistry">Chemistry</button>
+        <button class="chip" data-dept="cs">Computer Science</button>
+        <button class="chip" data-dept="english">English</button>
+    </div>
+
+    <!-- Teachers List -->
+    <div class="list-layout" id="teachers-list">
+        <!-- Teacher Card -->
+        <div class="card card--interactive" data-dept="mathematics">
+            <div class="card__body">
+                <div class="flex items-center gap-4">
+                    <div class="avatar avatar--xl" style="background: linear-gradient(135deg, #3B82F6, #1D4ED8); color: white; font-size: 28px;">
+                        👨‍🏫
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-semibold">Prof. R.K. Sharma</h4>
+                        <p class="text-sm text-secondary">Mathematics Department</p>
+                        <div class="flex flex-wrap gap-1 mt-1">
+                            <span class="badge badge--primary">MATH201</span>
+                            <span class="badge badge--primary">MATH301</span>
+                        </div>
+                        <div class="flex items-center gap-3 mt-2 text-xs text-tertiary">
+                            <span>📧 sharma@college.edu</span>
+                            <span>📞 +91 98765 43210</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <button class="btn btn-icon btn-sm btn-outline-primary" title="Email">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </button>
+                        <button class="btn btn-icon btn-sm btn-outline-primary" title="Call">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex gap-2 mt-3">
+                    <span class="text-xs text-tertiary">🕐 Mon, Wed, Fri • 9:00-10:00</span>
+                    <span class="text-xs text-tertiary">📍 Room 301</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teacher Card 2 -->
+        <div class="card card--interactive" data-dept="physics">
+            <div class="card__body">
+                <div class="flex items-center gap-4">
+                    <div class="avatar avatar--xl" style="background: linear-gradient(135deg, #8B5CF6, #6D28D9); color: white; font-size: 28px;">
+                        👨‍🔬
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-semibold">Dr. S.K. Patel</h4>
+                        <p class="text-sm text-secondary">Physics Department</p>
+                        <div class="flex flex-wrap gap-1 mt-1">
+                            <span class="badge badge--secondary">PHY101</span>
+                            <span class="badge badge--secondary">PHY201</span>
+                        </div>
+                        <div class="flex items-center gap-3 mt-2 text-xs text-tertiary">
+                            <span>📧 patel@college.edu</span>
+                            <span>📞 +91 98765 43211</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <button class="btn btn-icon btn-sm btn-outline-primary">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </button>
+                        <button class="btn btn-icon btn-sm btn-outline-primary">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex gap-2 mt-3">
+                    <span class="text-xs text-tertiary">🕐 Tue, Thu • 10:00-12:00</span>
+                    <span class="text-xs text-tertiary">📍 Lab 102</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teacher Card 3 -->
+        <div class="card card--interactive" data-dept="chemistry">
+            <div class="card__body">
+                <div class="flex items-center gap-4">
+                    <div class="avatar avatar--xl" style="background: linear-gradient(135deg, #22C55E, #15803D); color: white; font-size: 28px;">
+                        👩‍🔬
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-semibold">Dr. M. Reddy</h4>
+                        <p class="text-sm text-secondary">Chemistry Department</p>
+                        <div class="flex flex-wrap gap-1 mt-1">
+                            <span class="badge badge--success">CHM101</span>
+                        </div>
+                        <div class="flex items-center gap-3 mt-2 text-xs text-tertiary">
+                            <span>📧 reddy@college.edu</span>
+                            <span>📞 +91 98765 43212</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <button class="btn btn-icon btn-sm btn-outline-primary">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex gap-2 mt-3">
+                    <span class="text-xs text-tertiary">🕐 Mon, Wed • 11:30-12:30</span>
+                    <span class="text-xs text-tertiary">📍 Room 205</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teacher Card 4 -->
+        <div class="card card--interactive" data-dept="cs">
+            <div class="card__body">
+                <div class="flex items-center gap-4">
+                    <div class="avatar avatar--xl" style="background: linear-gradient(135deg, #F59E0B, #B45309); color: white; font-size: 28px;">
+                        👨‍💻
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-semibold">Prof. A. Kumar</h4>
+                        <p class="text-sm text-secondary">Computer Science Department</p>
+                        <div class="flex flex-wrap gap-1 mt-1">
+                            <span class="badge badge--warning">CSE201</span>
+                            <span class="badge badge--warning">CSE301</span>
+                        </div>
+                        <div class="flex items-center gap-3 mt-2 text-xs text-tertiary">
+                            <span>📧 kumar@college.edu</span>
+                            <span>📞 +91 98765 43213</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <button class="btn btn-icon btn-sm btn-outline-primary">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex gap-2 mt-3">
+                    <span class="text-xs text-tertiary">🕐 Tue, Thu, Fri • 13:30-14:30</span>
+                    <span class="text-xs text-tertiary">📍 Lab 1</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state-center" id="teachers-empty" style="display:none;">
+        <div class="empty-state__icon">👨‍🏫</div>
+        <h3 class="empty-state__title">No Teachers Found</h3>
+        <p class="empty-state__description">No teachers match your search criteria.</p>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // Department filter
+        document.querySelectorAll('#department-chips .chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                document.querySelectorAll('#department-chips .chip').forEach(c => c.classList.remove('chip--active'));
+                chip.classList.add('chip--active');
+                
+                const dept = chip.dataset.dept;
+                const cards = document.querySelectorAll('#teachers-list .card[data-dept]');
+                
+                cards.forEach(card => {
+                    card.style.display = (dept === 'all' || card.dataset.dept === dept) ? 'block' : 'none';
+                });
+            });
+        });
+        
+        // Search
+        document.getElementById('teachers-search')?.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('#teachers-list .card');
+            let found = false;
+            
+            cards.forEach(card => {
+                if (card.style.display === 'none') return;
+                const text = card.textContent.toLowerCase();
+                const match = text.includes(query);
+                card.style.display = match ? 'block' : 'none';
+                if (match) found = true;
+            });
+            
+            document.getElementById('teachers-empty').style.display = found ? 'none' : 'flex';
+        });
+    })();
+</script>
