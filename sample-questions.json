@@ -1,0 +1,30 @@
+{
+    "mathematics": [
+        { "id": 1, "q": "What is the derivative of x²?", "options": ["2x", "x", "x²", "1"], "correct": 0 },
+        { "id": 2, "q": "What is the integral of 2x?", "options": ["x²", "x² + C", "2x²", "x"], "correct": 1 },
+        { "id": 3, "q": "What is the limit of (sin x)/x as x→0?", "options": ["0", "∞", "1", "-1"], "correct": 2 },
+        { "id": 4, "q": "What is the derivative of eˣ?", "options": ["eˣ", "xeˣ", "1", "0"], "correct": 0 },
+        { "id": 5, "q": "What is the value of π (approx)?", "options": ["3.14", "2.71", "1.61", "1.41"], "correct": 0 }
+    ],
+    "physics": [
+        { "id": 1, "q": "What is the SI unit of force?", "options": ["Newton", "Joule", "Watt", "Pascal"], "correct": 0 },
+        { "id": 2, "q": "What is the speed of light in vacuum?", "options": ["3×10⁸ m/s", "3×10⁶ m/s", "3×10¹⁰ m/s", "3×10⁴ m/s"], "correct": 0 },
+        { "id": 3, "q": "Ohm's Law relates:", "options": ["V=IR", "P=IV", "F=ma", "E=mc²"], "correct": 0 },
+        { "id": 4, "q": "What is the value of g on Earth?", "options": ["9.8 m/s²", "10 m/s²", "8.9 m/s²", "11.2 m/s²"], "correct": 0 },
+        { "id": 5, "q": "Who discovered gravity?", "options": ["Newton", "Einstein", "Galileo", "Kepler"], "correct": 0 }
+    ],
+    "chemistry": [
+        { "id": 1, "q": "What is the chemical symbol for water?", "options": ["H₂O", "CO₂", "NaCl", "O₂"], "correct": 0 },
+        { "id": 2, "q": "What is the atomic number of Carbon?", "options": ["6", "12", "8", "14"], "correct": 0 },
+        { "id": 3, "q": "pH of pure water is:", "options": ["7", "0", "14", "1"], "correct": 0 },
+        { "id": 4, "q": "Which gas is most abundant in air?", "options": ["Nitrogen", "Oxygen", "CO₂", "Argon"], "correct": 0 },
+        { "id": 5, "q": "What is the formula of common salt?", "options": ["NaCl", "KCl", "CaCl₂", "MgCl₂"], "correct": 0 }
+    ],
+    "cs": [
+        { "id": 1, "q": "What does HTML stand for?", "options": ["HyperText Markup Language", "High Tech Modern Language", "HyperText Modern Links", "None"], "correct": 0 },
+        { "id": 2, "q": "Which is not a programming language?", "options": ["HTML", "Python", "Java", "C++"], "correct": 0 },
+        { "id": 3, "q": "What is the time complexity of binary search?", "options": ["O(log n)", "O(n)", "O(n²)", "O(1)"], "correct": 0 },
+        { "id": 4, "q": "CSS stands for:", "options": ["Cascading Style Sheets", "Computer Style System", "Creative Style Sheets", "None"], "correct": 0 },
+        { "id": 5, "q": "What is a data structure?", "options": ["Way to organize data", "Programming language", "Operating system", "Database"], "correct": 0 }
+    ]
+}
