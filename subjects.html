@@ -1,0 +1,233 @@
+<!-- ============================================
+   SUBJECTS PAGE
+   View and manage all academic subjects
+   ============================================ -->
+<div class="page-content page-content--with-header page-content--with-bottom-nav" id="subjects-page">
+    <!-- Page Title -->
+    <div class="page-title">
+        <div>
+            <h2>Subjects</h2>
+            <p class="page-subtitle">6 subjects this semester</p>
+        </div>
+        <button class="btn btn-primary btn-sm" id="add-subject-btn">
+            + Add Subject
+        </button>
+    </div>
+
+    <!-- Search -->
+    <div class="search-bar mb-4">
+        <svg class="search-bar__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="search" class="search-bar__input" placeholder="Search subjects..." id="subjects-search">
+    </div>
+
+    <!-- Subjects Grid -->
+    <div class="card-grid" id="subjects-grid">
+        <!-- Subject Card -->
+        <div class="card card--interactive" onclick="window.location.hash='#/subjects/math'">
+            <div class="card__body">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="avatar avatar--lg" style="background: linear-gradient(135deg, #3B82F6, #1D4ED8); color: white; font-size: 24px;">
+                        📐
+                    </div>
+                    <div>
+                        <h4 class="font-semibold">Mathematics</h4>
+                        <p class="text-xs text-secondary">MATH201</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 grid-gap-2 mb-3">
+                    <div class="text-center" style="background: var(--bg-secondary); padding: var(--space-2); border-radius: var(--border-radius-md);">
+                        <div class="text-sm font-bold text-success">92%</div>
+                        <div class="text-xs text-tertiary">Attendance</div>
+                    </div>
+                    <div class="text-center" style="background: var(--bg-secondary); padding: var(--space-2); border-radius: var(--border-radius-md);">
+                        <div class="text-sm font-bold text-primary">8/10</div>
+                        <div class="text-xs text-tertiary">Assignments</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-xs text-secondary">
+                    <span>👨‍🏫 Prof. Sharma</span>
+                    <span>•</span>
+                    <span>📅 Mon, Wed, Fri</span>
+                </div>
+                <div class="progress mt-2">
+                    <div class="progress__bar" style="width: 65%;" title="Syllabus completed: 65%"></div>
+                </div>
+                <p class="text-xs text-tertiary mt-1">Syllabus: 65% completed</p>
+            </div>
+        </div>
+
+        <!-- Physics -->
+        <div class="card card--interactive" onclick="window.location.hash='#/subjects/physics'">
+            <div class="card__body">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="avatar avatar--lg" style="background: linear-gradient(135deg, #8B5CF6, #6D28D9); color: white; font-size: 24px;">
+                        ⚡
+                    </div>
+                    <div>
+                        <h4 class="font-semibold">Physics</h4>
+                        <p class="text-xs text-secondary">PHY101</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 grid-gap-2 mb-3">
+                    <div class="text-center" style="background: var(--bg-secondary); padding: var(--space-2); border-radius: var(--border-radius-md);">
+                        <div class="text-sm font-bold text-warning">78%</div>
+                        <div class="text-xs text-tertiary">Attendance</div>
+                    </div>
+                    <div class="text-center" style="background: var(--bg-secondary); padding: var(--space-2); border-radius: var(--border-radius-md);">
+                        <div class="text-sm font-bold text-primary">6/8</div>
+                        <div class="text-xs text-tertiary">Assignments</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-xs text-secondary">
+                    <span>👨‍🏫 Dr. Patel</span>
+                    <span>•</span>
+                    <span>📅 Tue, Thu</span>
+                </div>
+                <div class="progress mt-2">
+                    <div class="progress__bar progress__bar--success" style="width: 70%;" title="Syllabus: 70%"></div>
+                </div>
+                <p class="text-xs text-tertiary mt-1">Syllabus: 70% completed</p>
+            </div>
+        </div>
+
+        <!-- Chemistry -->
+        <div class="card card--interactive" onclick="window.location.hash='#/subjects/chemistry'">
+            <div class="card__body">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="avatar avatar--lg" style="background: linear-gradient(135deg, #22C55E, #15803D); color: white; font-size: 24px;">
+                        🧪
+                    </div>
+                    <div>
+                        <h4 class="font-semibold">Chemistry</h4>
+                        <p class="text-xs text-secondary">CHM101</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 grid-gap-2 mb-3">
+                    <div class="text-center" style="background: var(--bg-secondary); padding: var(--space-2); border-radius: var(--border-radius-md);">
+                        <div class="text-sm font-bold text-error">72%</div>
+                        <div class="text-xs text-tertiary">Attendance</div>
+                    </div>
+                    <div class="text-center" style="background: var(--bg-secondary); padding: var(--space-2); border-radius: var(--border-radius-md);">
+                        <div class="text-sm font-bold text-primary">7/10</div>
+                        <div class="text-xs text-tertiary">Assignments</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-xs text-secondary">
+                    <span>👩‍🏫 Dr. Reddy</span>
+                    <span>•</span>
+                    <span>📅 Mon, Wed</span>
+                </div>
+                <div class="progress mt-2">
+                    <div class="progress__bar" style="width: 55%;" title="Syllabus: 55%"></div>
+                </div>
+                <p class="text-xs text-tertiary mt-1">Syllabus: 55% completed</p>
+            </div>
+        </div>
+
+        <!-- Computer Science -->
+        <div class="card card--interactive" onclick="window.location.hash='#/subjects/cs'">
+            <div class="card__body">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="avatar avatar--lg" style="background: linear-gradient(135deg, #F59E0B, #B45309); color: white; font-size: 24px;">
+                        💻
+                    </div>
+                    <div>
+                        <h4 class="font-semibold">Computer Science</h4>
+                        <p class="text-xs text-secondary">CSE201</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 grid-gap-2 mb-3">
+                    <div class="text-center" style="background: var(--bg-secondary); padding: var(--space-2); border-radius: var(--border-radius-md);">
+                        <div class="text-sm font-bold text-success">88%</div>
+                        <div class="text-xs text-tertiary">Attendance</div>
+                    </div>
+                    <div class="text-center" style="background: var(--bg-secondary); padding: var(--space-2); border-radius: var(--border-radius-md);">
+                        <div class="text-sm font-bold text-primary">9/10</div>
+                        <div class="text-xs text-tertiary">Assignments</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-xs text-secondary">
+                    <span>👨‍🏫 Prof. Kumar</span>
+                    <span>•</span>
+                    <span>📅 Tue, Thu, Fri</span>
+                </div>
+                <div class="progress mt-2">
+                    <div class="progress__bar progress__bar--success" style="width: 80%;" title="Syllabus: 80%"></div>
+                </div>
+                <p class="text-xs text-tertiary mt-1">Syllabus: 80% completed</p>
+            </div>
+        </div>
+
+        <!-- English -->
+        <div class="card card--interactive" onclick="window.location.hash='#/subjects/english'">
+            <div class="card__body">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="avatar avatar--lg" style="background: linear-gradient(135deg, #EC4899, #BE185D); color: white; font-size: 24px;">
+                        📖
+                    </div>
+                    <div>
+                        <h4 class="font-semibold">English</h4>
+                        <p class="text-xs text-secondary">ENG101</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 grid-gap-2 mb-3">
+                    <div class="text-center" style="background: var(--bg-secondary); padding: var(--space-2); border-radius: var(--border-radius-md);">
+                        <div class="text-sm font-bold text-success">96%</div>
+                        <div class="text-xs text-tertiary">Attendance</div>
+                    </div>
+                    <div class="text-center" style="background: var(--bg-secondary); padding: var(--space-2); border-radius: var(--border-radius-md);">
+                        <div class="text-sm font-bold text-primary">5/5</div>
+                        <div class="text-xs text-tertiary">Assignments</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-xs text-secondary">
+                    <span>👩‍🏫 Prof. Thomas</span>
+                    <span>•</span>
+                    <span>📅 Mon, Wed</span>
+                </div>
+                <div class="progress mt-2">
+                    <div class="progress__bar progress__bar--success" style="width: 60%;" title="Syllabus: 60%"></div>
+                </div>
+                <p class="text-xs text-tertiary mt-1">Syllabus: 60% completed</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state-center" id="subjects-empty" style="display:none;">
+        <div class="empty-state__icon">📚</div>
+        <h3 class="empty-state__title">No Subjects</h3>
+        <p class="empty-state__description">Add your subjects to start tracking your progress.</p>
+        <button class="btn btn-primary">Add Your First Subject</button>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // Search subjects
+        document.getElementById('subjects-search')?.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('#subjects-grid .card');
+            let found = false;
+            
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    card.style.display = 'block';
+                    found = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            document.getElementById('subjects-empty').style.display = found ? 'none' : 'flex';
+        });
+        
+        // Add subject
+        document.getElementById('add-subject-btn')?.addEventListener('click', () => {
+            alert('Add subject form coming soon!');
+        });
+    })();
+</script>
