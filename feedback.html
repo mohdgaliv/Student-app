@@ -1,0 +1,222 @@
+<!-- ============================================
+   FEEDBACK PAGE
+   User feedback and ratings
+   ============================================ -->
+<div class="page-content page-content--with-header page-content--with-bottom-nav" id="feedback-page">
+    <div class="page-title">
+        <div>
+            <h2>Feedback</h2>
+            <p class="page-subtitle">Help us improve your experience</p>
+        </div>
+    </div>
+
+    <!-- Rating Card -->
+    <div class="card mb-4 text-center">
+        <div class="card__body" style="padding: var(--space-6);">
+            <p class="text-sm text-secondary mb-3">How would you rate your experience?</p>
+            <div class="rating" id="feedback-rating" style="justify-content: center; gap: var(--space-2);">
+                <span class="rating__star" data-rating="1">⭐</span>
+                <span class="rating__star" data-rating="2">⭐</span>
+                <span class="rating__star" data-rating="3">⭐</span>
+                <span class="rating__star" data-rating="4">⭐</span>
+                <span class="rating__star" data-rating="5">⭐</span>
+            </div>
+            <p class="text-xs text-tertiary mt-2" id="rating-text">Tap a star to rate</p>
+        </div>
+    </div>
+
+    <!-- Feedback Form -->
+    <div class="card mb-5">
+        <div class="card__header">
+            <h3 class="section-title">📝 Detailed Feedback</h3>
+        </div>
+        <div class="card__body">
+            <form class="form-layout" id="feedback-form">
+                <!-- What do you like? -->
+                <div class="form-group">
+                    <label class="form-label">What do you like most? (Select all that apply)</label>
+                    <div class="grid grid-cols-2 grid-gap-2">
+                        <label class="chip chip--selectable" data-value="ui">
+                            <input type="checkbox" class="sr-only">🎨 Design
+                        </label>
+                        <label class="chip chip--selectable" data-value="features">
+                            <input type="checkbox" class="sr-only">⚡ Features
+                        </label>
+                        <label class="chip chip--selectable" data-value="speed">
+                            <input type="checkbox" class="sr-only">🚀 Speed
+                        </label>
+                        <label class="chip chip--selectable" data-value="ease">
+                            <input type="checkbox" class="sr-only">👍 Ease of Use
+                        </label>
+                        <label class="chip chip--selectable" data-value="offline">
+                            <input type="checkbox" class="sr-only">📱 Offline Mode
+                        </label>
+                        <label class="chip chip--selectable" data-value="ai">
+                            <input type="checkbox" class="sr-only">🤖 AI Assistant
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Suggestions -->
+                <div class="form-group">
+                    <label class="form-label" for="feedback-suggestions">Suggestions for improvement</label>
+                    <textarea id="feedback-suggestions" class="form-input form-textarea" 
+                              placeholder="Share your ideas..." rows="3"></textarea>
+                </div>
+
+                <!-- Bug Report -->
+                <div class="form-group">
+                    <label class="form-label" for="feedback-bug">Found a bug? Describe it here</label>
+                    <textarea id="feedback-bug" class="form-input form-textarea" 
+                              placeholder="What happened? What did you expect?" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    Submit Feedback
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Recent Updates -->
+    <div class="section-header">
+        <h3 class="section-title">🔄 Recent Updates</h3>
+    </div>
+    <div class="list-layout mb-6">
+        <div class="card">
+            <div class="card__body" style="padding: var(--space-3);">
+                <div class="flex gap-3">
+                    <span class="badge badge--success">New</span>
+                    <div>
+                        <div class="font-medium text-sm">AI Study Assistant</div>
+                        <p class="text-xs text-secondary">Get instant help with your doubts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card__body" style="padding: var(--space-3);">
+                <div class="flex gap-3">
+                    <span class="badge badge--primary">Improved</span>
+                    <div>
+                        <div class="font-medium text-sm">Quiz Experience</div>
+                        <p class="text-xs text-secondary">Better navigation and timer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card__body" style="padding: var(--space-3);">
+                <div class="flex gap-3">
+                    <span class="badge badge--warning">Fixed</span>
+                    <div>
+                        <div class="font-medium text-sm">Offline Mode Bugs</div>
+                        <p class="text-xs text-secondary">More reliable offline experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .rating__star {
+        font-size: 36px;
+        cursor: pointer;
+        transition: transform var(--transition-fast);
+        filter: grayscale(100%);
+        opacity: 0.5;
+    }
+    
+    .rating__star:hover,
+    .rating__star--active {
+        filter: grayscale(0%);
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    
+    .chip--selectable {
+        cursor: pointer;
+        user-select: none;
+    }
+    
+    .chip--selectable:has(input:checked) {
+        background-color: var(--color-primary-100);
+        border-color: var(--color-primary-500);
+        color: var(--color-primary-700);
+    }
+</style>
+
+<script>
+    (function() {
+        // Star rating
+        const stars = document.querySelectorAll('.rating__star');
+        let selectedRating = 0;
+        
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                selectedRating = parseInt(star.dataset.rating);
+                updateStars();
+                
+                const texts = ['', 'Poor 😞', 'Fair 😐', 'Good 😊', 'Great 🤩', 'Excellent 🎉'];
+                document.getElementById('rating-text').textContent = texts[selectedRating];
+            });
+            
+            star.addEventListener('mouseenter', () => {
+                const rating = parseInt(star.dataset.rating);
+                stars.forEach((s, i) => {
+                    if (i < rating) s.classList.add('rating__star--active');
+                });
+            });
+            
+            star.addEventListener('mouseleave', () => {
+                updateStars();
+            });
+        });
+        
+        function updateStars() {
+            stars.forEach((s, i) => {
+                if (i < selectedRating) {
+                    s.classList.add('rating__star--active');
+                } else {
+                    s.classList.remove('rating__star--active');
+                }
+            });
+        }
+        
+        // Feedback form
+        document.getElementById('feedback-form')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.classList.add('btn-loading');
+            btn.textContent = 'Submitting...';
+            
+            // Collect selected chips
+            const selectedLikes = [];
+            document.querySelectorAll('.chip--selectable input:checked').forEach(input => {
+                selectedLikes.push(input.closest('.chip--selectable').dataset.value);
+            });
+            
+            const feedbackData = {
+                rating: selectedRating,
+                likes: selectedLikes,
+                suggestions: document.getElementById('feedback-suggestions').value,
+                bug: document.getElementById('feedback-bug').value
+            };
+            
+            console.log('Feedback:', feedbackData);
+            
+            setTimeout(async () => {
+                btn.classList.remove('btn-loading');
+                btn.textContent = 'Submit Feedback';
+                e.target.reset();
+                selectedRating = 0;
+                updateStars();
+                document.getElementById('rating-text').textContent = 'Tap a star to rate';
+                
+                const { default: notifications } = await import('../js/notifications.js');
+                notifications.success('Thank you for your feedback! 🙏');
+            }, 1000);
+        });
+    })();
+</script>
