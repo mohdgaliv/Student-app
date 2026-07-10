@@ -1,0 +1,80 @@
+{
+    "user": {
+        "name": "Rahul Sharma",
+        "email": "rahul@example.com",
+        "phone": "+91 9876543210",
+        "course": "B.Tech",
+        "branch": "Computer Science",
+        "semester": 3,
+        "rollNumber": "BT2023001",
+        "bio": "Passionate about coding and learning new technologies.",
+        "avatar": null
+    },
+    "subjects": [
+        { "id": 1, "name": "Mathematics", "code": "MATH201", "icon": "📐", "teacher": "Prof. R.K. Sharma", "color": "#3B82F6", "attendance": 92, "progress": 65, "totalClasses": 50, "attendedClasses": 46 },
+        { "id": 2, "name": "Physics", "code": "PHY101", "icon": "⚡", "teacher": "Dr. S.K. Patel", "color": "#8B5CF6", "attendance": 78, "progress": 70, "totalClasses": 50, "attendedClasses": 39 },
+        { "id": 3, "name": "Chemistry", "code": "CHM101", "icon": "🧪", "teacher": "Dr. M. Reddy", "color": "#22C55E", "attendance": 72, "progress": 55, "totalClasses": 50, "attendedClasses": 36 },
+        { "id": 4, "name": "Computer Science", "code": "CSE201", "icon": "💻", "teacher": "Prof. A. Kumar", "color": "#F59E0B", "attendance": 88, "progress": 80, "totalClasses": 50, "attendedClasses": 44 },
+        { "id": 5, "name": "English", "code": "ENG101", "icon": "📖", "teacher": "Prof. S. Thomas", "color": "#EC4899", "attendance": 96, "progress": 60, "totalClasses": 50, "attendedClasses": 48 }
+    ],
+    "assignments": [
+        { "id": 1, "title": "Linear Algebra Problem Set", "subject": "Mathematics", "status": "pending", "dueDate": "2024-10-20", "questions": 10, "marks": 20, "description": "Complete problems from Chapter 3: Matrix operations" },
+        { "id": 2, "title": "Lab Report - Experiment 6", "subject": "Physics", "status": "submitted", "dueDate": "2024-10-15", "questions": 1, "marks": 15, "description": "Write lab report for the Ohm's Law experiment" },
+        { "id": 3, "title": "Data Structures Implementation", "subject": "Computer Science", "status": "graded", "dueDate": "2024-10-10", "questions": 3, "marks": 20, "score": 18, "description": "BST implementation in Python" },
+        { "id": 4, "title": "Calculus Problem Set 4", "subject": "Mathematics", "status": "overdue", "dueDate": "2024-10-12", "questions": 8, "marks": 20, "description": "Solve differential equations problems" }
+    ],
+    "homework": [
+        { "id": 1, "title": "Calculus - Exercise 5.2", "subject": "Mathematics", "status": "pending", "dueDate": "2024-10-16", "priority": "high", "description": "Solve problems 1-20 from Chapter 5" },
+        { "id": 2, "title": "Lab Report - Experiment 4", "subject": "Physics", "status": "completed", "dueDate": "2024-10-12", "priority": "normal", "description": "Complete lab report for optics experiment" },
+        { "id": 3, "title": "Organic Chemistry Worksheet", "subject": "Chemistry", "status": "overdue", "dueDate": "2024-10-10", "priority": "urgent", "description": "Complete naming worksheet" }
+    ],
+    "notes": [
+        { "id": 1, "title": "Trigonometry Formulas", "subject": "Mathematics", "icon": "📐", "isPinned": false, "content": "All trigonometric identities and formulas", "date": "2024-10-13" },
+        { "id": 2, "title": "Ohm's Law & Circuits", "subject": "Physics", "icon": "⚡", "isPinned": false, "content": "Complete electricity notes", "date": "2024-10-10" },
+        { "id": 3, "title": "Python Cheat Sheet", "subject": "Computer Science", "icon": "💻", "isPinned": true, "content": "Quick Python reference", "date": "2024-10-12" }
+    ],
+    "timetable": {
+        "monday": [
+            { "time": "09:00-10:00", "subject": "Mathematics", "teacher": "Prof. Sharma", "room": "301", "type": "class" },
+            { "time": "10:00-11:00", "subject": "Physics", "teacher": "Dr. Patel", "room": "Lab 102", "type": "lab" },
+            { "time": "11:00-11:30", "subject": "Break", "teacher": "", "room": "", "type": "break" },
+            { "time": "11:30-12:30", "subject": "Chemistry", "teacher": "Dr. Reddy", "room": "205", "type": "class" },
+            { "time": "12:30-13:30", "subject": "Lunch", "teacher": "", "room": "", "type": "break" },
+            { "time": "13:30-14:30", "subject": "Computer Science", "teacher": "Prof. Kumar", "room": "Lab 1", "type": "lab" }
+        ]
+    },
+    "results": {
+        "semester": 3,
+        "gpa": 3.8,
+        "subjects": [
+            { "subject": "Mathematics", "code": "MATH201", "totalMarks": 100, "internalMarks": 28, "externalMarks": 57, "grade": "A" },
+            { "subject": "Physics", "code": "PHY101", "totalMarks": 100, "internalMarks": 25, "externalMarks": 53, "grade": "B+" },
+            { "subject": "Chemistry", "code": "CHM101", "totalMarks": 100, "internalMarks": 22, "externalMarks": 50, "grade": "B" },
+            { "subject": "Computer Science", "code": "CSE201", "totalMarks": 100, "internalMarks": 29, "externalMarks": 63, "grade": "A+" },
+            { "subject": "English", "code": "ENG101", "totalMarks": 100, "internalMarks": 27, "externalMarks": 61, "grade": "A" }
+        ]
+    },
+    "teachers": [
+        { "id": 1, "name": "Prof. R.K. Sharma", "department": "Mathematics", "icon": "👨‍🏫", "email": "sharma@college.edu", "phone": "+91 9876543210", "subjects": ["MATH201", "MATH301"], "schedule": "Mon, Wed, Fri • 9:00-10:00", "room": "Room 301", "color": "#3B82F6" },
+        { "id": 2, "name": "Dr. S.K. Patel", "department": "Physics", "icon": "👨‍🔬", "email": "patel@college.edu", "phone": "+91 9876543211", "subjects": ["PHY101", "PHY201"], "schedule": "Tue, Thu • 10:00-12:00", "room": "Lab 102", "color": "#8B5CF6" },
+        { "id": 3, "name": "Dr. M. Reddy", "department": "Chemistry", "icon": "👩‍🔬", "email": "reddy@college.edu", "phone": "+91 9876543212", "subjects": ["CHM101"], "schedule": "Mon, Wed • 11:30-12:30", "room": "Room 205", "color": "#22C55E" },
+        { "id": 4, "name": "Prof. A. Kumar", "department": "Computer Science", "icon": "👨‍💻", "email": "kumar@college.edu", "phone": "+91 9876543213", "subjects": ["CSE201", "CSE301"], "schedule": "Tue, Thu, Fri • 13:30-14:30", "room": "Lab 1", "color": "#F59E0B" },
+        { "id": 5, "name": "Prof. S. Thomas", "department": "English", "icon": "👩‍🏫", "email": "thomas@college.edu", "phone": "+91 9876543214", "subjects": ["ENG101"], "schedule": "Mon, Wed • 14:00-15:00", "room": "Room 105", "color": "#EC4899" }
+    ],
+    "notifications": [
+        { "id": 1, "type": "assignment", "title": "Assignment Due Tomorrow", "message": "Calculus Problem Set 4 is due tomorrow", "icon": "📋", "time": "2h ago", "isRead": false },
+        { "id": 2, "type": "exam", "title": "Mid-term Schedule Released", "message": "Exam schedule published", "icon": "📅", "time": "5h ago", "isRead": true },
+        { "id": 3, "type": "achievement", "title": "7-Day Streak!", "message": "You've studied for 7 days in a row!", "icon": "🏆", "time": "1d ago", "isRead": true }
+    ],
+    "quizzes": [
+        { "id": 1, "title": "Calculus Basics", "subject": "Mathematics", "icon": "📐", "questions": 20, "duration": 10, "rating": 4.8, "attempts": 245, "status": "not_started" },
+        { "id": 2, "title": "Mechanics & Motion", "subject": "Physics", "icon": "⚡", "questions": 15, "duration": 15, "rating": 4.5, "attempts": 180, "status": "in_progress", "progress": 40 },
+        { "id": 3, "title": "Periodic Table Quiz", "subject": "Chemistry", "icon": "🧪", "questions": 10, "duration": 10, "rating": 4.7, "attempts": 300, "status": "completed", "score": 9, "totalScore": 10 }
+    ],
+    "progress": {
+        "streak": 15,
+        "achievements": ["First Quiz", "10 Notes", "Perfect Score", "7 Day Streak"],
+        "weeklyHours": [3, 4, 2, 5, 3.5, 2.5, 1.5],
+        "totalHours": 21.5
+    }
+}
