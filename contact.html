@@ -1,0 +1,124 @@
+<!-- ============================================
+   CONTACT PAGE
+   Support and contact information
+   ============================================ -->
+<div class="page-content page-content--with-header page-content--with-bottom-nav" id="contact-page">
+    <div class="page-title">
+        <div>
+            <h2>Contact Us</h2>
+            <p class="page-subtitle">We're here to help!</p>
+        </div>
+    </div>
+
+    <!-- Contact Methods -->
+    <div class="grid grid-cols-2 grid-gap-3 mb-5">
+        <div class="card text-center" style="padding: var(--space-5);">
+            <div style="font-size: 32px;">📧</div>
+            <div class="font-semibold text-sm mt-2">Email</div>
+            <div class="text-xs text-secondary">support@studentapp.com</div>
+            <button class="btn btn-sm btn-outline-primary mt-3" onclick="copyText('support@studentapp.com')">
+                Copy Email
+            </button>
+        </div>
+        <div class="card text-center" style="padding: var(--space-5);">
+            <div style="font-size: 32px;">📞</div>
+            <div class="font-semibold text-sm mt-2">Phone</div>
+            <div class="text-xs text-secondary">+91 1800-123-4567</div>
+            <button class="btn btn-sm btn-outline-primary mt-3" onclick="copyText('18001234567')">
+                Copy Number
+            </button>
+        </div>
+        <div class="card text-center" style="padding: var(--space-5);">
+            <div style="font-size: 32px;">💬</div>
+            <div class="font-semibold text-sm mt-2">Live Chat</div>
+            <div class="text-xs text-secondary">Available 24/7</div>
+            <button class="btn btn-sm btn-primary mt-3">
+                Start Chat
+            </button>
+        </div>
+        <div class="card text-center" style="padding: var(--space-5);">
+            <div style="font-size: 32px;">📚</div>
+            <div class="font-semibold text-sm mt-2">FAQ</div>
+            <div class="text-xs text-secondary">Find answers fast</div>
+            <button class="btn btn-sm btn-outline-primary mt-3">
+                View FAQ
+            </button>
+        </div>
+    </div>
+
+    <!-- Quick Contact Form -->
+    <div class="card mb-5">
+        <div class="card__header">
+            <h3 class="section-title">📩 Send us a Message</h3>
+        </div>
+        <div class="card__body">
+            <form class="form-layout" id="contact-form" novalidate>
+                <div class="form-group">
+                    <label class="form-label" for="contact-name">Your Name</label>
+                    <input type="text" id="contact-name" class="form-input" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="contact-email">Email Address</label>
+                    <input type="email" id="contact-email" class="form-input" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="contact-subject">Subject</label>
+                    <select id="contact-subject" class="form-input form-select">
+                        <option value="">Select a topic</option>
+                        <option value="bug">Report a Bug</option>
+                        <option value="feature">Feature Request</option>
+                        <option value="account">Account Issue</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="contact-message">Message</label>
+                    <textarea id="contact-message" class="form-input form-textarea" placeholder="Describe your issue..." rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="flex justify-center gap-4 mb-6">
+        <button class="btn btn-icon btn-ghost" aria-label="Twitter" style="font-size: 24px;">🐦</button>
+        <button class="btn btn-icon btn-ghost" aria-label="Instagram" style="font-size: 24px;">📷</button>
+        <button class="btn btn-icon btn-ghost" aria-label="YouTube" style="font-size: 24px;">▶️</button>
+        <button class="btn btn-icon btn-ghost" aria-label="GitHub" style="font-size: 24px;">💻</button>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // Copy to clipboard
+        window.copyText = async function(text) {
+            try {
+                await navigator.clipboard.writeText(text);
+                const { default: notifications } = await import('../js/notifications.js');
+                notifications.success('Copied to clipboard!');
+            } catch {
+                alert('Copied: ' + text);
+            }
+        };
+        
+        // Contact form
+        document.getElementById('contact-form')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.classList.add('btn-loading');
+            btn.textContent = 'Sending...';
+            
+            setTimeout(async () => {
+                btn.classList.remove('btn-loading');
+                btn.textContent = 'Send Message';
+                e.target.reset();
+                
+                const { default: notifications } = await import('../js/notifications.js');
+                notifications.success('Message sent! We\'ll get back to you soon.');
+            }, 1500);
+        });
+    })();
+</script>
