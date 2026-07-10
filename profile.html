@@ -1,0 +1,292 @@
+<!-- ============================================
+   PROFILE PAGE
+   User profile, settings, and account management
+   ============================================ -->
+<div class="page-content page-content--with-header page-content--with-bottom-nav" id="profile-page">
+  <!-- Profile Header -->
+  <div class="profile-header">
+    <div class="profile-cover"></div>
+    <div class="profile-info">
+      <div class="avatar avatar--xl" id="profile-avatar" style="border: 4px solid var(--bg-primary);">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+      </div>
+      <button class="btn btn-sm btn-outline-primary edit-photo-btn" aria-label="Edit photo">
+        📷 Edit
+      </button>
+      <h2 class="profile-name" id="profile-name">Student Name</h2>
+      <p class="profile-email" id="profile-email">student@example.com</p>
+      <div class="flex gap-4 justify-center mt-3">
+        <div class="text-center">
+          <div class="font-bold text-lg" id="profile-subjects">6</div>
+          <div class="text-xs text-secondary">Subjects</div>
+        </div>
+        <div class="text-center">
+          <div class="font-bold text-lg" id="profile-attendance">85%</div>
+          <div class="text-xs text-secondary">Attendance</div>
+        </div>
+        <div class="text-center">
+          <div class="font-bold text-lg" id="profile-completed">24</div>
+          <div class="text-xs text-secondary">Assignments</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Edit Profile Form -->
+  <div class="detail-layout" style="margin-top: var(--space-6);">
+    <div class="card">
+      <div class="card__header">
+        <h3 class="section-title">Personal Information</h3>
+      </div>
+      <div class="card__body">
+        <form class="form-layout" id="profile-form" novalidate>
+          <!-- Full Name -->
+          <div class="form-group">
+            <label class="form-label" for="profile-fullname">Full Name</label>
+            <input type="text" id="profile-fullname" name="fullName" class="form-input" value="Student Name">
+          </div>
+          
+          <!-- Email (readonly) -->
+          <div class="form-group">
+            <label class="form-label" for="profile-email-input">Email Address</label>
+            <input type="email" id="profile-email-input" class="form-input" readonly style="opacity: 0.7;">
+          </div>
+          
+          <!-- Phone -->
+          <div class="form-group">
+            <label class="form-label" for="profile-phone">Phone Number</label>
+            <input type="tel" id="profile-phone" name="phone" class="form-input" placeholder="+91 98765 43210">
+          </div>
+          
+          <!-- Date of Birth -->
+          <div class="form-group">
+            <label class="form-label" for="profile-dob">Date of Birth</label>
+            <input type="date" id="profile-dob" name="dob" class="form-input">
+          </div>
+          
+          <!-- Gender -->
+          <div class="form-group">
+            <label class="form-label">Gender</label>
+            <div class="flex gap-4">
+              <label class="radio-group">
+                <input type="radio" name="gender" value="male"> Male
+              </label>
+              <label class="radio-group">
+                <input type="radio" name="gender" value="female"> Female
+              </label>
+              <label class="radio-group">
+                <input type="radio" name="gender" value="other"> Other
+              </label>
+            </div>
+          </div>
+          
+          <!-- Bio -->
+          <div class="form-group">
+            <label class="form-label" for="profile-bio">Bio</label>
+            <textarea id="profile-bio" name="bio" class="form-input form-textarea" placeholder="Tell us about yourself..." maxlength="200"></textarea>
+            <span class="helper-text" id="bio-count">0/200</span>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-block">
+            Save Changes
+          </button>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Academic Info -->
+    <div class="card">
+      <div class="card__header">
+        <h3 class="section-title">Academic Information</h3>
+      </div>
+      <div class="card__body">
+        <div class="form-layout">
+          <div class="form-group">
+            <label class="form-label" for="profile-course">Course/Program</label>
+            <select id="profile-course" name="course" class="form-input form-select">
+              <option value="">Select Course</option>
+              <option value="btech">B.Tech</option>
+              <option value="be">B.E.</option>
+              <option value="bsc">B.Sc.</option>
+              <option value="bcom">B.Com</option>
+              <option value="ba">B.A.</option>
+              <option value="mtech">M.Tech</option>
+              <option value="mba">MBA</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="profile-branch">Branch</label>
+              <select id="profile-branch" name="branch" class="form-input form-select">
+                <option value="">Select Branch</option>
+                <option value="cse">Computer Science</option>
+                <option value="ece">Electronics</option>
+                <option value="mech">Mechanical</option>
+                <option value="civil">Civil</option>
+                <option value="ee">Electrical</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="profile-semester">Semester</label>
+              <select id="profile-semester" name="semester" class="form-input form-select">
+                <option value="">Select</option>
+                <option value="1">1st</option>
+                <option value="2">2nd</option>
+                <option value="3">3rd</option>
+                <option value="4">4th</option>
+                <option value="5">5th</option>
+                <option value="6">6th</option>
+                <option value="7">7th</option>
+                <option value="8">8th</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="profile-roll">Roll Number</label>
+            <input type="text" id="profile-roll" name="rollNumber" class="form-input" placeholder="Enter roll number">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Account Actions -->
+    <div class="card">
+      <div class="card__body">
+        <div class="list-layout">
+          <button class="btn btn-ghost btn-block justify-start" onclick="window.location.hash='#/settings'">
+            ⚙️ Settings
+          </button>
+          <button class="btn btn-ghost btn-block justify-start" onclick="window.location.hash='#/about'">
+            ℹ️ About
+          </button>
+          <button class="btn btn-ghost btn-block justify-start" onclick="window.location.hash='#/contact'">
+            📧 Contact Us
+          </button>
+          <hr class="divider">
+          <button class="btn btn-outline-danger btn-block" id="logout-btn">
+            🚪 Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .profile-header {
+    position: relative;
+    background: var(--card-bg);
+    border-radius: var(--border-radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+  }
+  
+  .profile-cover {
+    height: 100px;
+    background: linear-gradient(135deg, var(--color-primary-500), var(--color-secondary-500));
+  }
+  
+  .profile-info {
+    text-align: center;
+    padding: 0 var(--space-4) var(--space-4);
+    margin-top: -40px;
+    position: relative;
+  }
+  
+  .edit-photo-btn {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(30px);
+    background: var(--bg-primary);
+  }
+  
+  .profile-name {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    margin-top: var(--space-2);
+  }
+  
+  .profile-email {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+  }
+</style>
+
+<script>
+  (function() {
+    // Load profile data
+    async function loadProfile() {
+      try {
+        const { default: state } = await import('../js/state-manager.js');
+        const user = state.get('auth.user');
+        
+        if (user) {
+          document.getElementById('profile-name').textContent = user.name || 'Student';
+          document.getElementById('profile-email').textContent = user.email || '';
+          document.getElementById('profile-fullname').value = user.name || '';
+          document.getElementById('profile-email-input').value = user.email || '';
+          document.getElementById('profile-phone').value = user.phone || '';
+        }
+      } catch (error) {
+        console.error('Error loading profile:', error);
+      }
+    }
+    
+    // Bio character counter
+    const bioTextarea = document.getElementById('profile-bio');
+    const bioCount = document.getElementById('bio-count');
+    bioTextarea?.addEventListener('input', () => {
+      bioCount.textContent = `${bioTextarea.value.length}/200`;
+    });
+    
+    // Save profile
+    document.getElementById('profile-form')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      submitBtn.classList.add('btn-loading');
+      submitBtn.textContent = 'Saving...';
+      
+      try {
+        const { default: auth } = await import('../js/auth.js');
+        await auth.updateProfile({
+          name: document.getElementById('profile-fullname').value,
+          phone: document.getElementById('profile-phone').value,
+          bio: document.getElementById('profile-bio').value,
+          course: document.getElementById('profile-course').value,
+          branch: document.getElementById('profile-branch').value,
+          semester: document.getElementById('profile-semester').value,
+          rollNumber: document.getElementById('profile-roll').value
+        });
+        
+        const { default: notifications } = await import('../js/notifications.js');
+        notifications.success('Profile updated successfully!');
+        
+      } catch (error) {
+        console.error('Error saving profile:', error);
+      } finally {
+        submitBtn.classList.remove('btn-loading');
+        submitBtn.textContent = 'Save Changes';
+      }
+    });
+    
+    // Logout
+    document.getElementById('logout-btn')?.addEventListener('click', async () => {
+      if (confirm('Are you sure you want to logout?')) {
+        try {
+          const { default: auth } = await import('../js/auth.js');
+          await auth.logout();
+          window.location.hash = '#/login';
+        } catch (error) {
+          console.error('Logout failed:', error);
+        }
+      }
+    });
+    
+    loadProfile();
+  })();
+</script>
