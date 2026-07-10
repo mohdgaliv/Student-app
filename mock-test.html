@@ -1,0 +1,203 @@
+<!-- ============================================
+   MOCK TEST PAGE
+   Full-length practice tests with exam simulation
+   ============================================ -->
+<div class="page-content page-content--with-header page-content--with-bottom-nav" id="mock-test-page">
+    <!-- Page Title -->
+    <div class="page-title">
+        <div>
+            <h2>Mock Tests</h2>
+            <p class="page-subtitle">Practice with full-length tests</p>
+        </div>
+    </div>
+
+    <!-- Stats Banner -->
+    <div class="card mb-5" style="background: linear-gradient(135deg, var(--color-primary-500), var(--color-secondary-500)); color: white; padding: var(--space-5);">
+        <div class="grid grid-cols-3 grid-gap-4 text-center">
+            <div>
+                <div class="text-2xl font-extrabold">5</div>
+                <div class="text-xs opacity-80">Tests Taken</div>
+            </div>
+            <div>
+                <div class="text-2xl font-extrabold">72%</div>
+                <div class="text-xs opacity-80">Avg Score</div>
+            </div>
+            <div>
+                <div class="text-2xl font-extrabold">3</div>
+                <div class="text-xs opacity-80">Available</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upcoming/Active Tests -->
+    <div class="section-header">
+        <h3 class="section-title">📋 Available Mock Tests</h3>
+    </div>
+    <div class="list-layout" id="mock-test-list">
+        <!-- Test Card 1 -->
+        <div class="card card--interactive" onclick="showTestDetails('math-midterm')">
+            <div class="card__body">
+                <div class="flex justify-between items-start mb-3">
+                    <div class="flex items-center gap-3">
+                        <div class="avatar avatar--lg" style="background: var(--color-primary-100); font-size: 24px;">📐</div>
+                        <div>
+                            <h4 class="font-semibold">Mathematics - Mid Term</h4>
+                            <p class="text-xs text-secondary">Full Syllabus • 50 Questions</p>
+                        </div>
+                    </div>
+                    <span class="badge badge--primary">2 Hours</span>
+                </div>
+                <div class="flex gap-3 text-xs text-tertiary mb-2">
+                    <span>📅 Available till: 30 Oct 2024</span>
+                    <span>•</span>
+                    <span>⭐ 100 Marks</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs">
+                    <span class="text-success">✓ 45 students took this</span>
+                </div>
+                <button class="btn btn-primary btn-sm mt-3" onclick="event.stopPropagation(); startMockTest('math-midterm')">
+                    Start Test
+                </button>
+            </div>
+        </div>
+
+        <!-- Test Card 2 -->
+        <div class="card card--interactive" onclick="showTestDetails('physics-final')">
+            <div class="card__body">
+                <div class="flex justify-between items-start mb-3">
+                    <div class="flex items-center gap-3">
+                        <div class="avatar avatar--lg" style="background: var(--color-secondary-100); font-size: 24px;">⚡</div>
+                        <div>
+                            <h4 class="font-semibold">Physics - Final Mock</h4>
+                            <p class="text-xs text-secondary">Chapters 1-10 • 60 Questions</p>
+                        </div>
+                    </div>
+                    <span class="badge badge--warning">3 Hours</span>
+                </div>
+                <div class="flex gap-3 text-xs text-tertiary mb-2">
+                    <span>📅 Available till: 15 Nov 2024</span>
+                    <span>•</span>
+                    <span>⭐ 120 Marks</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs">
+                    <span class="text-success">✓ 32 students took this</span>
+                </div>
+                <button class="btn btn-primary btn-sm mt-3" onclick="event.stopPropagation(); startMockTest('physics-final')">
+                    Start Test
+                </button>
+            </div>
+        </div>
+
+        <!-- Test Card 3 - Completed -->
+        <div class="card" style="opacity: 0.8;">
+            <div class="card__body">
+                <div class="flex justify-between items-start mb-3">
+                    <div class="flex items-center gap-3">
+                        <div class="avatar avatar--lg" style="background: var(--color-success-100); font-size: 24px;">💻</div>
+                        <div>
+                            <h4 class="font-semibold">Computer Science - Unit Test</h4>
+                            <p class="text-xs text-secondary">Data Structures • 30 Questions</p>
+                        </div>
+                    </div>
+                    <span class="badge badge--success">Completed</span>
+                </div>
+                <div class="flex gap-3 text-xs text-tertiary mb-2">
+                    <span>📅 Taken on: 5 Oct 2024</span>
+                    <span>•</span>
+                    <span>⭐ Scored: 26/30</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-success font-semibold">Score: 87%</span>
+                    <span class="badge badge--success">A Grade</span>
+                </div>
+                <button class="btn btn-outline-primary btn-sm mt-3" onclick="event.stopPropagation();">
+                    View Results
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test Instructions Modal -->
+    <div class="modal-overlay" id="test-modal" style="display:none;">
+        <div class="modal-content modal-content--lg">
+            <div class="modal__header">
+                <h3 class="modal__title" id="test-modal-title">Mathematics - Mid Term</h3>
+                <button class="modal__close" onclick="closeTestModal()">✕</button>
+            </div>
+            <div class="modal__body">
+                <div class="alert alert--info mb-4">
+                    <span class="alert__icon">📋</span>
+                    <div class="alert__content">
+                        <div class="alert__title">Test Instructions</div>
+                        <p class="text-sm">Please read all instructions carefully before starting.</p>
+                    </div>
+                </div>
+                
+                <div class="list-styled mb-4">
+                    <li>Total duration: <strong>2 Hours</strong></li>
+                    <li>Total questions: <strong>50</strong></li>
+                    <li>Total marks: <strong>100</strong></li>
+                    <li>Each question carries <strong>2 marks</strong></li>
+                    <li>No negative marking</li>
+                    <li>You can navigate between questions</li>
+                    <li>Test will auto-submit when time expires</li>
+                    <li>Ensure stable internet connection</li>
+                </div>
+
+                <label class="checkbox-group mb-4">
+                    <input type="checkbox" id="test-agree">
+                    <span class="text-sm">I have read and understood all instructions</span>
+                </label>
+            </div>
+            <div class="modal__footer">
+                <button class="btn btn-ghost" onclick="closeTestModal()">Cancel</button>
+                <button class="btn btn-primary" id="start-test-btn" disabled>
+                    Start Test Now
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // Show test details modal
+        window.showTestDetails = function(testId) {
+            document.getElementById('test-modal').style.display = 'flex';
+            document.getElementById('start-test-btn').disabled = true;
+            document.getElementById('test-agree').checked = false;
+            
+            // Update modal content based on testId
+            if (testId === 'physics-final') {
+                document.getElementById('test-modal-title').textContent = 'Physics - Final Mock';
+            }
+        };
+        
+        window.closeTestModal = function() {
+            document.getElementById('test-modal').style.display = 'none';
+        };
+        
+        // Enable start button when checkbox checked
+        document.getElementById('test-agree')?.addEventListener('change', function() {
+            document.getElementById('start-test-btn').disabled = !this.checked;
+        });
+        
+        // Start mock test
+        window.startMockTest = function(testId) {
+            document.getElementById('test-modal').style.display = 'none';
+            
+            // Navigate to quiz page with test mode
+            window.location.hash = '#/quiz';
+            
+            // Show notification
+            import('../js/notifications.js').then(module => {
+                module.default.success('Mock test started! Good luck! 🍀');
+            });
+        };
+        
+        // Close modal on overlay click
+        document.getElementById('test-modal')?.addEventListener('click', function(e) {
+            if (e.target === this) closeTestModal();
+        });
+    })();
+</script>
