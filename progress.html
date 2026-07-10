@@ -1,0 +1,217 @@
+<!-- ============================================
+   PROGRESS PAGE
+   Track learning progress and achievements
+   ============================================ -->
+<div class="page-content page-content--with-header page-content--with-bottom-nav" id="progress-page">
+  <!-- Page Title -->
+  <div class="page-title">
+    <div>
+      <h2>My Progress</h2>
+      <p class="page-subtitle">Track your learning journey</p>
+    </div>
+  </div>
+  
+  <!-- Streak Card -->
+  <div class="card mb-5" style="background: linear-gradient(135deg, #F59E0B, #EF4444); color: white; padding: var(--space-5);">
+    <div class="flex items-center gap-4">
+      <div style="font-size: 48px;">🔥</div>
+      <div>
+        <div class="text-3xl font-extrabold">15 Days</div>
+        <p class="text-sm opacity-80">Learning Streak!</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-7 grid-gap-1 mt-4" id="streak-calendar">
+      <!-- Last 7 days -->
+      <div class="streak-day streak-day--active">M</div>
+      <div class="streak-day streak-day--active">T</div>
+      <div class="streak-day streak-day--active">W</div>
+      <div class="streak-day streak-day--active">T</div>
+      <div class="streak-day streak-day--active">F</div>
+      <div class="streak-day streak-day--active">S</div>
+      <div class="streak-day streak-day--today">S</div>
+    </div>
+  </div>
+  
+  <!-- Achievements -->
+  <div class="section-header">
+    <h3 class="section-title">🏆 Achievements</h3>
+    <span class="text-sm text-secondary">8/12 earned</span>
+  </div>
+  <div class="grid grid-cols-3 grid-gap-3 mb-5" id="achievements-grid">
+    <div class="card text-center" style="padding: var(--space-3);">
+      <div style="font-size: 32px;">🌟</div>
+      <div class="text-xs font-semibold mt-1">First Quiz</div>
+      <div class="text-xs text-success">Earned</div>
+    </div>
+    <div class="card text-center" style="padding: var(--space-3);">
+      <div style="font-size: 32px;">📚</div>
+      <div class="text-xs font-semibold mt-1">10 Notes</div>
+      <div class="text-xs text-success">Earned</div>
+    </div>
+    <div class="card text-center" style="padding: var(--space-3);">
+      <div style="font-size: 32px;">💯</div>
+      <div class="text-xs font-semibold mt-1">Perfect Score</div>
+      <div class="text-xs text-success">Earned</div>
+    </div>
+    <div class="card text-center" style="padding: var(--space-3);">
+      <div style="font-size: 32px;">🔥</div>
+      <div class="text-xs font-semibold mt-1">7 Day Streak</div>
+      <div class="text-xs text-success">Earned</div>
+    </div>
+    <div class="card text-center" style="padding: var(--space-3); opacity: 0.5;">
+      <div style="font-size: 32px;">👑</div>
+      <div class="text-xs font-semibold mt-1">30 Day Streak</div>
+      <div class="text-xs text-tertiary">Locked</div>
+    </div>
+    <div class="card text-center" style="padding: var(--space-3); opacity: 0.5;">
+      <div style="font-size: 32px;">🎯</div>
+      <div class="text-xs font-semibold mt-1">100% Attendance</div>
+      <div class="text-xs text-tertiary">Locked</div>
+    </div>
+  </div>
+  
+  <!-- Subject Progress -->
+  <div class="section-header">
+    <h3 class="section-title">📈 Subject Progress</h3>
+  </div>
+  <div class="list-layout mb-6">
+    <div class="card">
+      <div class="card__body">
+        <div class="flex justify-between mb-2">
+          <span class="font-medium">📐 Mathematics</span>
+          <span class="text-sm text-success font-semibold">65%</span>
+        </div>
+        <div class="progress">
+          <div class="progress__bar progress__bar--success" style="width: 65%;"></div>
+        </div>
+        <p class="text-xs text-tertiary mt-1">8/12 chapters completed</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card__body">
+        <div class="flex justify-between mb-2">
+          <span class="font-medium">⚡ Physics</span>
+          <span class="text-sm text-primary font-semibold">70%</span>
+        </div>
+        <div class="progress">
+          <div class="progress__bar" style="width: 70%;"></div>
+        </div>
+        <p class="text-xs text-tertiary mt-1">7/10 chapters completed</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card__body">
+        <div class="flex justify-between mb-2">
+          <span class="font-medium">🧪 Chemistry</span>
+          <span class="text-sm text-warning font-semibold">55%</span>
+        </div>
+        <div class="progress">
+          <div class="progress__bar progress__bar--warning" style="width: 55%;"></div>
+        </div>
+        <p class="text-xs text-tertiary mt-1">5/9 chapters completed</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card__body">
+        <div class="flex justify-between mb-2">
+          <span class="font-medium">💻 Computer Science</span>
+          <span class="text-sm text-success font-semibold">80%</span>
+        </div>
+        <div class="progress">
+          <div class="progress__bar progress__bar--success" style="width: 80%;"></div>
+        </div>
+        <p class="text-xs text-tertiary mt-1">8/10 chapters completed</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Study Hours -->
+  <div class="section-header">
+    <h3 class="section-title">⏱️ Study Hours This Week</h3>
+  </div>
+  <div class="card mb-6">
+    <div class="card__body">
+      <div class="chart-bars" style="height: 150px;">
+        <div class="chart-bar-group">
+          <div class="chart-bar" style="height: 60%;">
+            <span class="chart-value">3h</span>
+          </div>
+          <span class="chart-label">Mon</span>
+        </div>
+        <div class="chart-bar-group">
+          <div class="chart-bar" style="height: 80%;">
+            <span class="chart-value">4h</span>
+          </div>
+          <span class="chart-label">Tue</span>
+        </div>
+        <div class="chart-bar-group">
+          <div class="chart-bar" style="height: 40%;">
+            <span class="chart-value">2h</span>
+          </div>
+          <span class="chart-label">Wed</span>
+        </div>
+        <div class="chart-bar-group">
+          <div class="chart-bar" style="height: 100%;">
+            <span class="chart-value">5h</span>
+          </div>
+          <span class="chart-label">Thu</span>
+        </div>
+        <div class="chart-bar-group">
+          <div class="chart-bar" style="height: 70%;">
+            <span class="chart-value">3.5h</span>
+          </div>
+          <span class="chart-label">Fri</span>
+        </div>
+        <div class="chart-bar-group">
+          <div class="chart-bar" style="height: 50%;">
+            <span class="chart-value">2.5h</span>
+          </div>
+          <span class="chart-label">Sat</span>
+        </div>
+        <div class="chart-bar-group">
+          <div class="chart-bar" style="height: 30%;">
+            <span class="chart-value">1.5h</span>
+          </div>
+          <span class="chart-label">Sun</span>
+        </div>
+      </div>
+      <p class="text-center text-sm text-secondary mt-3">
+        Total: <strong class="text-primary">21.5 hours</strong> this week
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .streak-day {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: var(--font-bold);
+    background: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .streak-day--active {
+    background: rgba(255, 255, 255, 0.9);
+    color: #F59E0B;
+  }
+  
+  .streak-day--today {
+    background: white;
+    color: #EF4444;
+    border: 2px solid white;
+  }
+</style>
+
+<script>
+  (function() {
+    // Progress page - mostly static display
+    // In real app, data would be loaded from state/storage
+    console.log('Progress page loaded');
+  })();
+</script>
