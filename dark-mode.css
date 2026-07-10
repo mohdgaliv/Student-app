@@ -1,0 +1,339 @@
+/* ============================================
+   DARK MODE THEME
+   Override CSS variables for dark color scheme
+   ============================================ */
+
+/* Dark mode via data attribute */
+[data-theme="dark"] {
+    /* ========== BACKGROUND COLORS ========== */
+    --bg-primary: #0F172A;        /* Slate 900 */
+    --bg-secondary: #1E293B;      /* Slate 800 */
+    --bg-tertiary: #334155;       /* Slate 700 */
+    --bg-hover: rgba(255, 255, 255, 0.05);
+    --bg-active: rgba(59, 130, 246, 0.15);
+    --bg-disabled: #334155;
+    
+    /* ========== TEXT COLORS ========== */
+    --text-primary: #F1F5F9;      /* Slate 100 */
+    --text-secondary: #94A3B8;    /* Slate 400 */
+    --text-tertiary: #64748B;     /* Slate 500 */
+    --text-inverse: #0F172A;
+    --text-link: #60A5FA;         /* Blue 400 */
+    --text-disabled: #475569;     /* Slate 600 */
+    
+    /* ========== BORDER COLORS ========== */
+    --border-color: #334155;      /* Slate 700 */
+    --border-color-hover: #475569; /* Slate 600 */
+    --border-color-focus: #3B82F6; /* Blue 500 */
+    
+    /* ========== ICON COLORS ========== */
+    --icon-color: #94A3B8;
+    --icon-color-hover: #CBD5E1;
+    
+    /* ========== SHADOWS (Darker & more subtle) ========== */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5), 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0.3);
+    --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.6);
+    --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    
+    /* ========== COMPONENT-SPECIFIC ========== */
+    --card-bg: #1E293B;           /* Slate 800 */
+    --card-shadow: var(--shadow-sm);
+    
+    --input-bg: #1E293B;
+    --input-border: #475569;
+    --input-focus-ring: 0 0 0 3px rgba(59, 130, 246, 0.25);
+    
+    --overlay-bg: rgba(0, 0, 0, 0.7);
+    --skeleton-bg: #334155;
+    
+    /* ========== SCROLLBAR ========== */
+    --scrollbar-track: #1E293B;
+    --scrollbar-thumb: #475569;
+    --scrollbar-thumb-hover: #64748B;
+    
+    /* ========== COLOR PALETTE ADJUSTMENTS ========== */
+    /* Slightly lighter primary for better contrast */
+    --color-primary-50: #1E3A5F;
+    --color-primary-100: #1E4D8C;
+    
+    /* Dark mode specific styles */
+    color-scheme: dark;
+}
+
+/* ========== DARK MODE SPECIFIC OVERRIDES ========== */
+
+/* Better contrast for cards in dark mode */
+[data-theme="dark"] .card {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .card:hover {
+    border-color: var(--border-color-hover);
+}
+
+/* Form elements */
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-textarea {
+    background-color: #1E293B;
+    color: #F1F5F9;
+    border-color: #475569;
+}
+
+[data-theme="dark"] .form-input:focus,
+[data-theme="dark"] .form-select:focus,
+[data-theme="dark"] .form-textarea:focus {
+    border-color: #3B82F6;
+    background-color: #1E293B;
+}
+
+[data-theme="dark"] .form-input::placeholder {
+    color: #64748B;
+}
+
+/* Dropdowns */
+[data-theme="dark"] .dropdown__menu {
+    background-color: #1E293B;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .dropdown__item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Modals */
+[data-theme="dark"] .modal-content {
+    background-color: #1E293B;
+    border: 1px solid #334155;
+}
+
+/* Toast notifications */
+[data-theme="dark"] .toast {
+    background-color: #1E293B;
+}
+
+/* Sidebar */
+[data-theme="dark"] .sidebar {
+    background-color: #0F172A;
+    border-right-color: #1E293B;
+}
+
+/* Header */
+[data-theme="dark"] .app-header {
+    background-color: rgba(15, 23, 42, 0.9);
+    border-bottom-color: #1E293B;
+}
+
+/* Bottom navigation */
+[data-theme="dark"] .bottom-nav {
+    background-color: #0F172A;
+    border-top-color: #1E293B;
+}
+
+/* Search bar */
+[data-theme="dark"] .search-bar__input {
+    background-color: #334155;
+    color: #F1F5F9;
+}
+
+[data-theme="dark"] .search-bar__input:focus {
+    background-color: #1E293B;
+}
+
+/* Tabs */
+[data-theme="dark"] .tab:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Alerts - adjusted for dark mode */
+[data-theme="dark"] .alert--info {
+    background-color: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);
+    color: #93C5FD;
+}
+
+[data-theme="dark"] .alert--success {
+    background-color: rgba(34, 197, 94, 0.1);
+    border-color: rgba(34, 197, 94, 0.3);
+    color: #86EFAC;
+}
+
+[data-theme="dark"] .alert--warning {
+    background-color: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.3);
+    color: #FCD34D;
+}
+
+[data-theme="dark"] .alert--error {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #FCA5A5;
+}
+
+/* Badges */
+[data-theme="dark"] .badge--primary {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: #93C5FD;
+}
+
+[data-theme="dark"] .badge--success {
+    background-color: rgba(34, 197, 94, 0.2);
+    color: #86EFAC;
+}
+
+[data-theme="dark"] .badge--warning {
+    background-color: rgba(245, 158, 11, 0.2);
+    color: #FCD34D;
+}
+
+[data-theme="dark"] .badge--error {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #FCA5A5;
+}
+
+/* Table styles */
+[data-theme="dark"] table th,
+[data-theme="dark"] table td {
+    border-bottom-color: #334155;
+}
+
+[data-theme="dark"] table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Code blocks */
+[data-theme="dark"] .code-block {
+    background-color: #0F172A;
+    color: #E2E8F0;
+}
+
+/* Skeleton loading */
+[data-theme="dark"] .skeleton {
+    background: linear-gradient(
+        90deg,
+        #334155 25%,
+        #475569 50%,
+        #334155 75%
+    );
+    background-size: 200% 100%;
+}
+
+/* Auth card */
+[data-theme="dark"] .auth-layout__card {
+    background-color: #1E293B;
+    border: 1px solid #334155;
+}
+
+/* Empty state */
+[data-theme="dark"] .empty-state__icon {
+    opacity: 0.3;
+}
+
+/* Blockquote */
+[data-theme="dark"] blockquote {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-left-color: #3B82F6;
+}
+
+/* Divider with text */
+[data-theme="dark"] .divider-with-text::before,
+[data-theme="dark"] .divider-with-text::after {
+    border-color: #334155;
+}
+
+/* Timeline */
+[data-theme="dark"] .timeline::before {
+    background-color: #334155;
+}
+
+[data-theme="dark"] .timeline__item::before {
+    background-color: #1E293B;
+    border-color: #3B82F6;
+}
+
+/* Selection color */
+[data-theme="dark"] ::selection {
+    background-color: rgba(59, 130, 246, 0.3);
+    color: #F1F5F9;
+}
+
+/* Images - slight dim in dark mode */
+[data-theme="dark"] img:not([src*=".svg"]):not(.no-dim) {
+    /* Optional: slightly reduce brightness of images */
+    /* filter: brightness(0.9); */
+}
+
+/* SVG icons inversion if needed */
+[data-theme="dark"] .icon-invert {
+    filter: invert(1);
+}
+
+/* ========== DARK MODE TRANSITIONS ========== */
+
+/* Smooth transition when switching themes */
+body,
+.app-layout,
+.sidebar,
+.app-header,
+.bottom-nav,
+.card,
+.modal-content,
+.form-input,
+.form-select,
+.btn,
+.dropdown__menu,
+.toast,
+.alert {
+    transition: background-color var(--transition-base),
+                color var(--transition-base),
+                border-color var(--transition-base),
+                box-shadow var(--transition-base);
+}
+
+/* ========== SYSTEM PREFERENCE AUTO DETECTION ========== */
+
+/* Auto dark mode based on system preference */
+@media (prefers-color-scheme: dark) {
+    [data-theme="auto"] {
+        --bg-primary: #0F172A;
+        --bg-secondary: #1E293B;
+        --bg-tertiary: #334155;
+        --bg-hover: rgba(255, 255, 255, 0.05);
+        --bg-active: rgba(59, 130, 246, 0.15);
+        --bg-disabled: #334155;
+        --text-primary: #F1F5F9;
+        --text-secondary: #94A3B8;
+        --text-tertiary: #64748B;
+        --text-inverse: #0F172A;
+        --text-link: #60A5FA;
+        --text-disabled: #475569;
+        --border-color: #334155;
+        --border-color-hover: #475569;
+        --border-color-focus: #3B82F6;
+        --card-bg: #1E293B;
+        --input-bg: #1E293B;
+        --input-border: #475569;
+        --overlay-bg: rgba(0, 0, 0, 0.7);
+        --skeleton-bg: #334155;
+        --scrollbar-track: #1E293B;
+        --scrollbar-thumb: #475569;
+        --scrollbar-thumb-hover: #64748B;
+        color-scheme: dark;
+    }
+}
+
+/* ========== PRINT STYLES (Always light) ========== */
+@media print {
+    [data-theme="dark"],
+    [data-theme="auto"] {
+        --bg-primary: #FFFFFF;
+        --text-primary: #000000;
+        --card-bg: #FFFFFF;
+        /* Reset all to light for printing */
+    }
+}
