@@ -1,0 +1,294 @@
+<!-- ============================================
+   ONBOARDING SCREEN
+   First-time user introduction
+   ============================================ -->
+<div class="onboarding-container" id="onboarding">
+    <!-- Slides Container -->
+    <div class="onboarding-slides" id="onboarding-slides">
+        <!-- Slide 1 -->
+        <div class="onboarding-slide" data-slide="0">
+            <div class="onboarding-illustration">
+                <svg width="250" height="250" viewBox="0 0 250 250" fill="none">
+                    <!-- Study illustration -->
+                    <rect x="50" y="40" width="150" height="170" rx="15" fill="var(--color-primary-100)" stroke="var(--color-primary-500)" stroke-width="2"/>
+                    <line x1="70" y1="80" x2="180" y2="80" stroke="var(--color-primary-500)" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="70" y1="100" x2="150" y2="100" stroke="var(--color-primary-400)" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="70" y1="120" x2="170" y2="120" stroke="var(--color-primary-400)" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="70" y1="140" x2="130" y2="140" stroke="var(--color-primary-400)" stroke-width="3" stroke-linecap="round"/>
+                    <circle cx="180" cy="170" r="30" fill="var(--color-primary-500)" opacity="0.8"/>
+                    <path d="M170 170L178 178L190 162" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h2 class="onboarding-title">Track Your Studies</h2>
+            <p class="onboarding-description">
+                Keep all your subjects, assignments, and notes organized in one place.
+                Never miss a deadline again!
+            </p>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="onboarding-slide" data-slide="1">
+            <div class="onboarding-illustration">
+                <svg width="250" height="250" viewBox="0 0 250 250" fill="none">
+                    <!-- Quiz illustration -->
+                    <circle cx="125" cy="110" r="80" fill="var(--color-secondary-100)" stroke="var(--color-secondary-500)" stroke-width="2"/>
+                    <text x="85" y="120" font-size="40" fill="var(--color-secondary-600)" font-weight="bold">Q</text>
+                    <text x="135" y="120" font-size="30" fill="var(--color-secondary-400)">?</text>
+                    <rect x="70" y="170" width="110" height="40" rx="20" fill="var(--color-secondary-500)"/>
+                    <text x="95" y="195" font-size="14" fill="white" font-weight="bold">START QUIZ</text>
+                </svg>
+            </div>
+            <h2 class="onboarding-title">Test Your Knowledge</h2>
+            <p class="onboarding-description">
+                Practice with quizzes and mock tests. Track your progress
+                and improve your scores day by day.
+            </p>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="onboarding-slide" data-slide="3">
+            <div class="onboarding-illustration">
+                <svg width="250" height="250" viewBox="0 0 250 250" fill="none">
+                    <!-- AI Assistant illustration -->
+                    <circle cx="125" cy="100" r="60" fill="var(--color-success-100)" stroke="var(--color-success-500)" stroke-width="2"/>
+                    <circle cx="105" cy="90" r="8" fill="var(--color-success-600)"/>
+                    <circle cx="145" cy="90" r="8" fill="var(--color-success-600)"/>
+                    <path d="M105 115 Q125 130 145 115" stroke="var(--color-success-600)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <rect x="70" y="180" width="110" height="35" rx="17" fill="var(--color-success-500)"/>
+                    <text x="85" y="202" font-size="12" fill="white" font-weight="bold">ASK AI ASSISTANT</text>
+                </svg>
+            </div>
+            <h2 class="onboarding-title">AI Study Assistant</h2>
+            <p class="onboarding-description">
+                Get instant help with your doubts. Our AI assistant is here 
+                to explain concepts and answer your questions 24/7.
+            </p>
+        </div>
+    </div>
+    
+    <!-- Navigation Dots -->
+    <div class="onboarding-dots" id="onboarding-dots">
+        <button class="onboarding-dot onboarding-dot--active" data-index="0" aria-label="Slide 1"></button>
+        <button class="onboarding-dot" data-index="1" aria-label="Slide 2"></button>
+        <button class="onboarding-dot" data-index="2" aria-label="Slide 3"></button>
+    </div>
+    
+    <!-- Actions -->
+    <div class="onboarding-actions">
+        <button class="btn btn-ghost onboarding-skip" id="onboarding-skip">
+            Skip
+        </button>
+        <button class="btn btn-primary onboarding-next" id="onboarding-next">
+            Next
+            <span class="btn-icon-right">→</span>
+        </button>
+    </div>
+</div>
+
+<style>
+    .onboarding-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        min-height: 100dvh;
+        background-color: var(--bg-primary);
+        padding: var(--space-6);
+        padding-top: var(--space-12);
+    }
+    
+    .onboarding-slides {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .onboarding-slide {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: var(--space-6);
+        opacity: 0;
+        transform: translateX(50px);
+        transition: all var(--transition-base);
+        pointer-events: none;
+    }
+    
+    .onboarding-slide--active {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: all;
+    }
+    
+    .onboarding-slide--exit-left {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    
+    .onboarding-illustration {
+        margin-bottom: var(--space-4);
+        animation: float 4s ease-in-out infinite;
+    }
+    
+    .onboarding-title {
+        font-size: var(--text-3xl);
+        font-weight: var(--font-bold);
+        color: var(--text-primary);
+        margin-bottom: var(--space-2);
+    }
+    
+    .onboarding-description {
+        font-size: var(--text-base);
+        color: var(--text-secondary);
+        max-width: 350px;
+        line-height: var(--leading-relaxed);
+    }
+    
+    /* Dots */
+    .onboarding-dots {
+        display: flex;
+        justify-content: center;
+        gap: var(--space-3);
+        padding: var(--space-6) 0;
+    }
+    
+    .onboarding-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--color-gray-300);
+        border: none;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+    
+    .onboarding-dot--active {
+        background-color: var(--color-primary-500);
+        width: 32px;
+        border-radius: 5px;
+    }
+    
+    /* Actions */
+    .onboarding-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--space-4) 0;
+        padding-bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
+    }
+    
+    .onboarding-skip {
+        color: var(--text-secondary);
+        font-weight: var(--font-medium);
+    }
+    
+    .onboarding-next {
+        min-width: 120px;
+    }
+    
+    .btn-icon-right {
+        transition: transform var(--transition-fast);
+    }
+    
+    .onboarding-next:hover .btn-icon-right {
+        transform: translateX(4px);
+    }
+    
+    @media (max-width: 480px) {
+        .onboarding-title {
+            font-size: var(--text-2xl);
+        }
+        
+        .onboarding-illustration svg {
+            width: 200px;
+            height: 200px;
+        }
+    }
+</style>
+
+<script>
+    (function() {
+        const slides = document.querySelectorAll('.onboarding-slide');
+        const dots = document.querySelectorAll('.onboarding-dot');
+        const nextBtn = document.getElementById('onboarding-next');
+        const skipBtn = document.getElementById('onboarding-skip');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        function goToSlide(index) {
+            if (index < 0 || index >= totalSlides) return;
+            
+            // Remove old
+            slides.forEach(s => s.classList.remove('onboarding-slide--active', 'onboarding-slide--exit-left'));
+            dots.forEach(d => d.classList.remove('onboarding-dot--active'));
+            
+            // Set current
+            slides[index].classList.add('onboarding-slide--active');
+            dots[index].classList.add('onboarding-dot--active');
+            
+            currentSlide = index;
+            
+            // Update button text
+            if (currentSlide === totalSlides - 1) {
+                nextBtn.innerHTML = 'Get Started <span class="btn-icon-right">✓</span>';
+            } else {
+                nextBtn.innerHTML = 'Next <span class="btn-icon-right">→</span>';
+            }
+        }
+        
+        function nextSlide() {
+            if (currentSlide === totalSlides - 1) {
+                // Go to login
+                window.location.hash = '#/login';
+                return;
+            }
+            
+            // Exit current slide
+            slides[currentSlide].classList.add('onboarding-slide--exit-left');
+            slides[currentSlide].classList.remove('onboarding-slide--active');
+            
+            goToSlide(currentSlide + 1);
+        }
+        
+        nextBtn.addEventListener('click', nextSlide);
+        
+        skipBtn.addEventListener('click', () => {
+            window.location.hash = '#/login';
+        });
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                goToSlide(parseInt(dot.dataset.index));
+            });
+        });
+        
+        // Swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        const slidesContainer = document.getElementById('onboarding-slides');
+        
+        slidesContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        slidesContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    goToSlide(currentSlide - 1);
+                }
+            }
+        });
+        
+        // Initialize
+        goToSlide(0);
+    })();
+</script>
