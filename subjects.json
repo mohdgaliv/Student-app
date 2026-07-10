@@ -1,0 +1,7 @@
+[
+    { "id": 1, "name": "Mathematics", "code": "MATH201", "icon": "📐", "teacher": "Prof. R.K. Sharma", "color": "#3B82F6", "syllabus": ["Calculus", "Linear Algebra", "Differential Equations", "Probability", "Statistics", "Complex Numbers"] },
+    { "id": 2, "name": "Physics", "code": "PHY101", "icon": "⚡", "teacher": "Dr. S.K. Patel", "color": "#8B5CF6", "syllabus": ["Mechanics", "Thermodynamics", "Optics", "Electromagnetism", "Modern Physics"] },
+    { "id": 3, "name": "Chemistry", "code": "CHM101", "icon": "🧪", "teacher": "Dr. M. Reddy", "color": "#22C55E", "syllabus": ["Atomic Structure", "Chemical Bonding", "Thermodynamics", "Organic Chemistry", "Equilibrium"] },
+    { "id": 4, "name": "Computer Science", "code": "CSE201", "icon": "💻", "teacher": "Prof. A. Kumar", "color": "#F59E0B", "syllabus": ["Data Structures", "Algorithms", "Python", "Database", "Networking"] },
+    { "id": 5, "name": "English", "code": "ENG101", "icon": "📖", "teacher": "Prof. S. Thomas", "color": "#EC4899", "syllabus": ["Grammar", "Writing Skills", "Literature", "Communication"] }
+]
