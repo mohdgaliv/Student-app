@@ -1,0 +1,243 @@
+<!-- ============================================
+   OTP VERIFICATION PAGE
+   Phone/Email verification with OTP
+   ============================================ -->
+<div class="auth-layout" id="otp-page">
+    <div class="auth-layout__card">
+        <!-- Header -->
+        <div class="auth-header">
+            <span style="font-size: 48px;">🔢</span>
+            <h1 class="auth-title">Verify OTP</h1>
+            <p class="auth-subtitle">
+                Enter the 6-digit code sent to<br>
+                <strong id="otp-sent-to">+91 98765 43210</strong>
+            </p>
+        </div>
+        
+        <!-- OTP Input -->
+        <form class="form-layout" id="otp-form" novalidate>
+            <div class="otp-input-group" id="otp-input-group">
+                <input type="text" class="otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]" data-index="0" autocomplete="one-time-code" required>
+                <input type="text" class="otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]" data-index="1" required>
+                <input type="text" class="otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]" data-index="2" required>
+                <input type="text" class="otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]" data-index="3" required>
+                <input type="text" class="otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]" data-index="4" required>
+                <input type="text" class="otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]" data-index="5" required>
+            </div>
+            
+            <span class="helper-text helper-text--error text-center" id="otp-error"></span>
+            
+            <button type="submit" class="btn btn-primary btn-block btn-lg" id="otp-submit">
+                Verify
+            </button>
+        </form>
+        
+        <!-- Timer & Resend -->
+        <div class="text-center" style="margin-top: var(--space-4);">
+            <p class="text-sm text-secondary">
+                Didn't receive code? 
+                <span id="otp-timer">Resend in <strong id="timer-count">30</strong>s</span>
+                <button class="btn btn-ghost text-link" id="resend-otp" style="display:none;">
+                    Resend OTP
+                </button>
+            </p>
+        </div>
+        
+        <!-- Change contact -->
+        <div style="text-align:center; margin-top: var(--space-6);">
+            <a href="#/login" class="btn btn-ghost">
+                ← Use different method
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .otp-input-group {
+        display: flex;
+        gap: var(--space-3);
+        justify-content: center;
+        margin-bottom: var(--space-4);
+    }
+    
+    .otp-input {
+        width: 48px;
+        height: 56px;
+        text-align: center;
+        font-size: var(--text-2xl);
+        font-weight: var(--font-bold);
+        border: 2px solid var(--input-border);
+        border-radius: var(--border-radius-lg);
+        background-color: var(--input-bg);
+        color: var(--text-primary);
+        transition: all var(--transition-fast);
+    }
+    
+    .otp-input:focus {
+        border-color: var(--border-color-focus);
+        box-shadow: var(--input-focus-ring);
+        outline: none;
+    }
+    
+    .otp-input--filled {
+        border-color: var(--color-primary-500);
+        background-color: var(--color-primary-50);
+    }
+    
+    .otp-input--error {
+        border-color: var(--color-error-500);
+        animation: shake 0.5s ease;
+    }
+    
+    @media (max-width: 400px) {
+        .otp-input {
+            width: 42px;
+            height: 48px;
+            font-size: var(--text-xl);
+        }
+        .otp-input-group {
+            gap: var(--space-2);
+        }
+    }
+</style>
+
+<script>
+    (function() {
+        const otpInputs = document.querySelectorAll('.otp-input');
+        const form = document.getElementById('otp-form');
+        const errorEl = document.getElementById('otp-error');
+        const timerCount = document.getElementById('timer-count');
+        const timerSpan = document.getElementById('otp-timer');
+        const resendBtn = document.getElementById('resend-otp');
+        let timerInterval;
+        let timeLeft = 30;
+        
+        // Auto-focus and input handling
+        otpInputs.forEach((input, index) => {
+            // Handle input
+            input.addEventListener('input', (e) => {
+                const value = e.target.value;
+                
+                // Only allow numbers
+                if (!/^\d$/.test(value)) {
+                    e.target.value = '';
+                    return;
+                }
+                
+                e.target.value = value;
+                input.classList.add('otp-input--filled');
+                
+                // Auto-focus next
+                if (value && index < otpInputs.length - 1) {
+                    otpInputs[index + 1].focus();
+                }
+            });
+            
+            // Handle backspace
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                    otpInputs[index - 1].focus();
+                    otpInputs[index - 1].value = '';
+                    otpInputs[index - 1].classList.remove('otp-input--filled');
+                }
+            });
+            
+            // Handle paste
+            input.addEventListener('paste', (e) => {
+                e.preventDefault();
+                const pastedData = (e.clipboardData || window.clipboardData).getData('text');
+                const digits = pastedData.replace(/\D/g, '').split('');
+                
+                otpInputs.forEach((inp, i) => {
+                    if (digits[i]) {
+                        inp.value = digits[i];
+                        inp.classList.add('otp-input--filled');
+                    }
+                });
+                
+                // Focus last filled or next empty
+                const lastIndex = Math.min(digits.length, otpInputs.length) - 1;
+                if (lastIndex < otpInputs.length - 1) {
+                    otpInputs[lastIndex + 1]?.focus();
+                }
+            });
+        });
+        
+        // Start timer
+        function startTimer() {
+            timeLeft = 30;
+            timerCount.textContent = timeLeft;
+            timerSpan.style.display = 'inline';
+            resendBtn.style.display = 'none';
+            
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                timerCount.textContent = timeLeft;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    timerSpan.style.display = 'none';
+                    resendBtn.style.display = 'inline';
+                }
+            }, 1000);
+        }
+        
+        // Resend OTP
+        resendBtn.addEventListener('click', async () => {
+            try {
+                const { default: auth } = await import('../js/auth.js');
+                await auth.sendOTP('+919876543210'); // Get actual phone
+                startTimer();
+                // Clear inputs
+                otpInputs.forEach(inp => {
+                    inp.value = '';
+                    inp.classList.remove('otp-input--filled');
+                });
+                otpInputs[0].focus();
+            } catch (error) {
+                errorEl.textContent = error.message;
+            }
+        });
+        
+        // Submit OTP
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errorEl.textContent = '';
+            
+            // Get OTP value
+            const otp = Array.from(otpInputs).map(inp => inp.value).join('');
+            
+            if (otp.length !== 6) {
+                errorEl.textContent = 'Please enter complete OTP';
+                otpInputs.forEach(inp => inp.classList.add('otp-input--error'));
+                setTimeout(() => otpInputs.forEach(inp => inp.classList.remove('otp-input--error')), 500);
+                return;
+            }
+            
+            const submitBtn = document.getElementById('otp-submit');
+            submitBtn.classList.add('btn-loading');
+            submitBtn.textContent = 'Verifying...';
+            
+            try {
+                const { default: auth } = await import('../js/auth.js');
+                await auth.verifyOTP(otp);
+                window.location.hash = '#/dashboard';
+            } catch (error) {
+                errorEl.textContent = error.message;
+                otpInputs.forEach(inp => {
+                    inp.value = '';
+                    inp.classList.remove('otp-input--filled');
+                });
+                otpInputs[0].focus();
+            } finally {
+                submitBtn.classList.remove('btn-loading');
+                submitBtn.textContent = 'Verify';
+            }
+        });
+        
+        // Initialize
+        startTimer();
+        otpInputs[0]?.focus();
+    })();
+</script>
